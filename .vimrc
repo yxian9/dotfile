@@ -10,4 +10,4 @@ set relativenumber
 set incsearch
 set hlsearch
 set nocompatible
-colorscheme catppuccin_mocha
+colo desert

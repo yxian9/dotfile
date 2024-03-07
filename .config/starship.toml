@@ -1,6 +1,6 @@
 [character]
 success_symbol = "[\uf054](white)" # 
-vicmd_symbol = "[\ue62b](white)" # 
+vicmd_symbol = "[\ue62b](green)" # 
 error_symbol = "[\uf467](red)" # 
 
 
@@ -11,10 +11,12 @@ style = "blue bold"
 disabled = true
 
 [username]
-disabled = true
+disabled = false
 
 [hostname]
-disabled = true
+ssh_only = true
+ssh_symbol = ''
+format = '[$hostname](bold dimmed green) '
 
 [rlang]
 disabled = true
@@ -32,10 +34,11 @@ disabled = false
 disabled = true
 
 [git_state]
-disabled = false
-
-[git_metrics]
 disabled = true
 
-[git_status]
+[git_metrics]
 disabled = false
+
+[git_status]
+disabled = true
+
