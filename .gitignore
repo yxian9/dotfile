@@ -1,5 +1,6 @@
 .config/raycast/extensions/
 .config/zed
 .config/simple-update-notifier
-.config/karabiner
+.config/karabiner/a*
 .zshrc
+wallpaper
