@@ -1,7 +1,7 @@
 switch (uname)
   case Darwin ## for macos
     eval (/opt/homebrew/bin/brew shellenv)
-    fish_add_path /opt/homebrew/Caskroom/miniforge/base/condabin
+    fish_add_path -a /opt/homebrew/Caskroom/miniforge/base/condabin
     abbr bic "brew install --cask"
     abbr bin "brew info"
     abbr binc "brew info --cask"
@@ -16,7 +16,7 @@ switch (uname)
         if test -f "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
             . "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
         else
-            set -x PATH "/opt/homebrew/Caskroom/miniforge/base/bin" $PATH
+        fish_add_path -a "/opt/homebrew/Caskroom/miniforge/base/bin" 
         end
     end
     # <<< conda initialize <<<
@@ -61,10 +61,10 @@ set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings
 
 
-abbr vi "nvim"
+abbr vim "nvim"
 
 
-starship init fish | source
+# starship init fish | source
 zoxide init --cmd cd fish | source
 
 bind \cr _fzf_search_history
@@ -73,4 +73,4 @@ bind \co _lfcd
 bind -M insert \co _lfcd
 bind -M insert \cr _fzf_search_history
 
-
+set -g fish_escape_delay_ms 30
