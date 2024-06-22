@@ -7,7 +7,7 @@ switch (uname)
     abbr binc "brew info --cask"
     abbr bs "brew search"
     abbr zcat 'gzcat'
-
+    set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
     if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
@@ -54,6 +54,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 fish_add_path ~/.config/bin
+fish_add_path /usr/local/go/bin
+fish_add_path /Users/yxiang/go/bin
+
 set -Ux EDITOR nvim
 set -Ux OPENER nvim
 
@@ -61,8 +64,9 @@ set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings
 
 
-abbr vim "nvim"
-
+# abbr vi "nvim"
+# abbr rm "rm -i"
+alias rm='rm -i'
 
 # starship init fish | source
 zoxide init --cmd cd fish | source
@@ -74,3 +78,29 @@ bind -M insert \co _lfcd
 bind -M insert \cr _fzf_search_history
 
 set -g fish_escape_delay_ms 30
+
+## fzf cd
+function fcd
+    # Get a list of directories, ignore errors
+    set curDirs (ls -d */ 2>/dev/null )
+
+    # Exit if no directories are found
+    if test -z "$curDirs"
+        return
+    end
+
+    # Use fzf to allow the user to select a directory
+    set SELECTED_curDirs (echo $curDirs | string split " " | string trim -r -c '/' | fzf --cycle --layout=reverse --border \
+      --height=90% --preview-window=wrap --marker="*" --prompt='Select dir: ')
+
+    # Exit if no directory is selected
+    if test -z "$SELECTED_curDirs"
+        return
+    end
+
+    # Remove the trailing slash to prevent issues
+    set SELECTED_curDirs (string trim -r -c '/' "$SELECTED_curDirs")
+
+    # Change to the selected directory and show current directory
+    cd $SELECTED_curDirs && return
+end

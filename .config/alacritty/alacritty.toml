@@ -4,14 +4,14 @@ import = ["~/.config/alacritty/themes/themes/github_dark_colorblind.toml"]
 animation = "EaseOutExpo"
 duration = 0
 
-[[keyboard.bindings]]
-key = "Space"
-mods = "Control"
-action = "ToggleViMode"
+# [[keyboard.bindings]]
+# key = "Space"
+# mods = "Control"
+# action = "ToggleViMode"
 
 
 [scrolling]
-history = 5000
+history = 15000
 
 
 [colors]
@@ -70,7 +70,7 @@ size = 18
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
-style = "Bold"
+#style = "Bold"
 
 [font.glyph_offset]
 x = 0
@@ -88,7 +88,7 @@ x = 0
 y = 0
 
 [mouse]
-hide_when_typing = true
+hide_when_typing = false
 
 [[mouse.bindings]]
 action = "PasteSelection"
@@ -97,15 +97,17 @@ mouse = "Middle"
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 save_to_clipboard = true
+
 [shell]
-program = "/bin/zsh"
+program = "/opt/homebrew/bin/fish"
 
 [window]
 decorations = "full"
 dynamic_title = false
 title = ''
 # startup_mode = "Maximized"
-opacity = 0.9
+opacity = 0.95
+# opacity = 1
 
 [window.dimensions]
 columns = 160

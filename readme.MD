@@ -32,7 +32,7 @@ brew install --cask temurin ## JDK https://adoptium.net/
 brew install --cask font-jetbrains-mono-nerd-font
 brew install --cask alacritty
 
-brew install zoxide fzf lf fish bat ripgrep starship neovim miniforge tmux stow jq node yabai skhd bat  
+brew install zoxide fzf lf fish bat ripgrep neovim miniforge tmux stow jq node  
 
 ## fisher setup
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
