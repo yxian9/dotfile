@@ -19,8 +19,7 @@ switch (uname)
         fish_add_path -a "/opt/homebrew/Caskroom/miniforge/base/bin" 
         end
     end
-    # <<< conda initialize <<<
-
+    # <<< conda initialize <<< 
 
   case Linux
    # >>> conda initialize >>>
@@ -39,16 +38,20 @@ switch (uname)
 end
 
 ## cursor
-set fish_vi_force_cursor
-set fish_cursor_default block
+# set fish_vi_force_cursor
+# set fish_cursor_default block
+
 # Set the insert mode cursor to a line
 set fish_cursor_insert line
+
 # Set the replace mode cursors to an underscore
 set fish_cursor_replace_one underscore
 set fish_cursor_replace underscore
+
 # The following variable can be used to configure cursor shape in
 # visual mode, but due to fish_cursor_default, is redundant here
-set fish_cursor_visual block
+
+# set fish_cursor_visual block
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
@@ -103,4 +106,54 @@ function fcd
 
     # Change to the selected directory and show current directory
     cd $SELECTED_curDirs && return
+end
+
+
+
+## fish shell cursor
+# https://github.com/fish-shell/fish-shell/issues/7458
+function fish_mode_prompt
+  switch $fish_bind_mode
+    case default
+      echo -en "\e[2 q"
+      set_color -o brwhite
+      echo "["
+      set_color -o brred
+      echo "N"
+      set_color -o brwhite
+      echo "]"
+    case insert
+      echo -en "\e[6 q"
+      set_color -o brwhite
+      echo "["
+      set_color -o brgreen
+      echo "I"
+      set_color -o brwhite
+      echo "]"
+    case replace_one
+      echo -en "\e[4 q"
+      set_color -o brwhite
+      echo "["
+      set_color -o bryellow
+      echo "R"
+      set_color -o brwhite
+      echo "]"
+    case visual
+      echo -en "\e[2 q"
+      set_color -o brwhite
+      echo "["
+      set_color -o brmagenta
+      echo "V"
+      set_color -o brwhite
+      echo "]"
+    case '*'
+      echo -en "\e[2 q"
+      set_color -o brwhite
+      echo "["
+      set_color -o brred
+      echo "?"
+      set_color -o brwhite
+      echo "]"
+  end
+  set_color normal
 end

@@ -99,11 +99,6 @@
     "when": "editorHoverFocused"
   },
   {
-    "key": "shift+j",
-    "command": "selectNextSuggestion",
-    "when": "searchViewletVisible || suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-  },
-  {
     "key": "shift+k",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
@@ -241,7 +236,34 @@
     "key": "ctrl+d",
     "command": "-deleteRight",
     "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "-turboConsoleLog.displayLogMessage"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-mdx.toggleStrong",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'mdx'"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-markdown.extension.editing.toggleBold",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "key": "cmd+9",
+    "command": "-workbench.action.lastEditorInGroup"
+  },
+  {
+    "key": "ctrl+cmd+9",
+    "command": "-workbench.action.moveEditorToLastGroup"
   }
+  // {
+  //   "key": "shift+;",
+  //   "command": "vim.showQuickpickCmdLine",
+  //   "when": "editorTextFocus && vim.mode != 'Insert'"
+  // }
 
   // {
   //   "key": "ctrl+m",

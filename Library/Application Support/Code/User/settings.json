@@ -3,7 +3,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    // "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true
   },
   "[typescript]": {
@@ -27,11 +27,14 @@
   "editor.inlineSuggest.enabled": true,
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
+  "editor.guides.indentation": true,
+  "editor.guides.highlightActiveIndentation": true,
   "editor.occurrencesHighlight": "off",
-  "editor.renderLineHighlight": "gutter",
+  "editor.renderLineHighlight": "line",
   "editor.selectionHighlight": false,
   "editor.stickyScroll.enabled": false,
   "editor.suggest.insertMode": "replace",
+  "editor.renderWhitespace": "trailing",
   "editor.tabSize": 2,
   "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
   "editor.wordWrap": "on",
@@ -46,24 +49,23 @@
     "*.config": "groovy"
   },
   "files.exclude": {
-    "**/node_modules": true
+    // "**/node_modules": true
   },
   "search.exclude": {
     "**/node_modules": true
   },
   "files.simpleDialog.enable": true,
-  "files.autoSave": "onFocusChange",
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
   "github.copilot.enable": {
-    "*": false,
+    "quarto": false,
+    "*": true,
     "markdown": true,
     "plaintext": false,
-    "quarto": false,
     "scminput": false
   },
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "interactiveWindow.executeWithShiftEnter": true,
+  "interactiveWindow.executeWithShiftEnter": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "jupyter.askForKernelRestart": false,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
@@ -98,8 +100,21 @@
       "after": ["<Esc>"]
     }
   ],
+  "vim.normalModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
+    // {
+    //   "before": ["\n"],
+    //   "commands": ["vim.showQuickpickCmdLine"]
+    // },
     // groupEditor or windows movement
+    {
+      "before": ["<C-u>"],
+      "after": ["H", "z", "z"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["L", "z", "z"]
+    },
     {
       "before": ["C-h"],
       "after": ["C-w", "h"]
@@ -116,14 +131,35 @@
       "before": ["C-l"],
       "after": ["C-w", "l"]
     },
+    // jupyter
     {
-      // bookmark
+      "before": ["C-["],
+      "commands": ["jupyter.gotoPrevCellInFile"]
+    },
+    {
+      "before": ["C-]"],
+      "commands": ["jupyter.gotoNextCellInFile"]
+    },
+    // bookmark
+    {
       "before": ["<leader>", "m"],
       "commands": ["bookmarks.toggle"]
     },
     {
-      "before": ["<leader>", "b"],
+      "before": ["<leader>", "b", "l"],
       "commands": ["bookmarks.list"]
+    },
+    {
+      "before": ["<leader>", "b", "c"],
+      "commands": ["bookmarks.clear"]
+    },
+    {
+      "before": ["<leader>", "b", "C"],
+      "commands": ["bookmarks.clearFromAllFiles"]
+    },
+    {
+      "before": ["<leader>", "b", "b"],
+      "commands": ["bookmarks.listFromAllFiles"]
     },
     // 全部折叠
     {
@@ -134,6 +170,14 @@
     {
       "before": ["<leader>", "z", "o"],
       "commands": ["editor.unfoldAll"]
+    },
+    {
+      "before": ["leader", "l", "l"],
+      "commands": ["turboConsoleLog.displayLogMessage"]
+    },
+    {
+      "before": ["leader", "l", "d"],
+      "commands": ["turboConsoleLog.commentAllLogMessages"]
     },
     {
       "before": ["leader", "t"],
@@ -162,57 +206,28 @@
     {
       "before": ["u"],
       "after": [],
-      "commands": [
-        {
-          "command": "undo"
-        }
-      ]
+      "commands": ["undo"]
     },
     {
       "before": ["<C-r>"],
       "after": [],
-      "commands": [
-        {
-          "command": "redo"
-        }
-      ]
+      "commands": ["redo"]
     },
-    // vim j k
-    // vim j k
-    //    {
-    //      "before": ["j"],
-    //      "after": ["g", "j"]
-    //    },
-    //    {
-    //      "before": ["k"],
-    //      "after": ["g", "k"]
-    //    },
     // vim easymotion
-    {
-      "after": ["_"],
-      "before": ["H"]
-    },
-    {
-      "before": ["L"],
-      "after": ["g", "_"]
-    },
-    {
-      "before": ["g", "f", "f"], // visual line and to to last chan
-      "after": ["V", "$", "%"]
-    },
 
     {
-      "before": ["g", "s", " "],
+      "before": ["g", "e", " "],
       "after": ["leader", "leader", "s"]
     },
     {
-      "before": ["g", "s", "w"],
+      "before": ["g", "e", "w"],
       "after": ["leader", "leader", "w"]
     },
     {
-      "before": ["g", "s", "b"],
+      "before": ["g", "e", "b"],
       "after": ["leader", "leader", "b"]
     },
+    // lsp related staff
     {
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
@@ -221,14 +236,21 @@
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
     },
-    // 转到实现
-    {
-      "before": ["g", "i"],
-      "commands": ["editor.action.goToImplementation"]
-    },
+    // {
+    //   "before": ["g", "i"],
+    //   "commands": ["editor.action.goToImplementation"]
+    // },
     {
       "before": ["g", "d"],
       "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["g", "q"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "f"], // visual line and to to last char, jump
+      "after": ["V", "$", "%"]
     },
     {
       "before": ["<leader>", "r"],
@@ -277,7 +299,7 @@
   "vim.searchHighlightColor": "#5f00af",
   "vim.sneak": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
-  // "vim.timeout": 3000,
+  "vim.timeout": 4000,
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindings": [
     {
@@ -310,6 +332,17 @@
     {
       "fbefore": ["a", "d"],
       "commands": ["editor.action.smartSelect.shrink"]
+    },
+    {
+      // "0 will always have the content of the latest yank
+      "before": ["<leader>", "p"],
+      "after": ["\"", "0", "p"]
+    }
+  ],
+  "vim.operatorPendingModeKeyBindings": [
+    {
+      "before": ["i", "e"],
+      "after": ["i", "w"]
     }
   ],
   "vim.visualstar": true,
@@ -319,18 +352,18 @@
   "whichkey.bindings": [
     {
       "key": "b",
-      "name": "+buffers/editors...",
+      "name": "+buffers",
       "type": "bindings",
       "bindings": [
-        {
-          "command": "workbench.action.showAllEditors",
-          "key": "b",
-          "name": "Show all buffers/editors",
-          "type": "command"
-        },
+        // {
+        //   "command": "workbench.action.showAllEditors",
+        //   "key": "b",
+        //   "name": "Show all buffers/editors",
+        //   "type": "command"
+        // },
         {
           "command": "workbench.action.showEditorsInActiveGroup",
-          "key": "B",
+          "key": "b",
           "name": "Show all buffers/editors in active group",
           "type": "command"
         },
@@ -352,12 +385,12 @@
         //   "name": "Open file/folder",
         //   "type": "command"
         // },
-        {
-          "command": "workbench.action.files.newUntitledFile",
-          "key": "n",
-          "name": "New Untitled",
-          "type": "command"
-        },
+        // {
+        //   "command": "workbench.action.files.newUntitledFile",
+        //   "key": "n",
+        //   "name": "New Untitled",
+        //   "type": "command"
+        // },
         {
           "command": "workbench.action.files.saveAll",
           "key": "s",
@@ -434,12 +467,6 @@
           "command": "workbench.view.explorer",
           "key": "e",
           "name": "Show explorer",
-          "type": "command"
-        },
-        {
-          "command": "workbench.view.search",
-          "key": "s",
-          "name": "Show search",
           "type": "command"
         },
         {
@@ -522,10 +549,11 @@
         {
           "commands": [
             "editor.action.addSelectionToNextFindMatch",
-            "workbench.action.findInFiles"
+            "workbench.action.findInFiles",
+            "search.action.focusSearchList"
           ],
-          "key": "s",
-          "name": "Search in a project with a selection",
+          "key": "f",
+          "name": "Search in a project with the selection",
           "type": "commands"
         },
         {
@@ -541,13 +569,13 @@
             }
           ],
           "key": "e",
-          "name": "search editor",
+          "name": "Search in editor with the selection",
           "type": "commands"
         },
         {
           "command": "workbench.action.showAllSymbols",
-          "key": "S",
-          "name": "Jump to symbol in workspace",
+          "key": "a",
+          "name": "Open all Symbols ",
           "type": "command"
         }
       ],
@@ -773,7 +801,7 @@
     // }
   ],
   "workbench.activityBar.location": "top",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.editor.tabSizing": "shrink",
@@ -788,5 +816,29 @@
   "workbench.editor.tabActionUnpinVisibility": false,
   "emmet.triggerExpansionOnTab": true,
   "editor.tabCompletion": "on",
-  "editor.suggest.localityBonus": true // for list selection
+  "editor.suggest.localityBonus": true,
+  "terminal.integrated.inheritEnv": false,
+  "yaml.schemas": {
+    "file:///Users/yxiang/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "atlascode.bitbucket.explorer.enabled": true,
+  "atlascode.bitbucket.explorer.relatedJiraIssues.enabled": false,
+  "atlascode.bitbucket.explorer.refreshInterval": 35,
+  "atlascode.bitbucket.pipelines.explorerEnabled": false,
+  "atlascode.jira.enabled": false,
+  "atlascode.bitbucket.issues.explorerEnabled": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "interactiveWindow.collapseCellInputCode": "never",
+  "jupyter.interactiveWindow.textEditor.autoMoveToNextCell": false,
+  "jupyter.interactiveWindow.textEditor.cellFolding": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "files.refactoring.autoSave": false,
+  "files.autoSave": "onFocusChange",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "excalidraw.theme": "dark" // for list selection
 }
