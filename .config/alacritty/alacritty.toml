@@ -70,7 +70,8 @@ TERM = "xterm"
 size = 18
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+# family = "JetBrainsMono Nerd Font"
+family = "VictorMono Nerd Font Mono"
 #style = "Bold"
 
 [font.glyph_offset]
@@ -78,10 +79,12 @@ x = 0
 y = 0
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+# family = "JetBrainsMono Nerd Font"
+family = "VictorMono Nerd Font Mono"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "VictorMono Nerd Font Mono"
+# family = "JetBrainsMono Nerd Font"
 style = "Medium"
 
 [font.offset]

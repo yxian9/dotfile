@@ -3,3 +3,4 @@
 -- Add any additional options here
 local opt = vim.opt
 opt.pumblend = 0
+opt.winbar = "%=%m %f"

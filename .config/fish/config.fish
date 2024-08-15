@@ -1,40 +1,40 @@
 switch (uname)
-  case Darwin ## for macos
-    eval (/opt/homebrew/bin/brew shellenv)
-    fish_add_path -a /opt/homebrew/Caskroom/miniforge/base/condabin
-    abbr bic "brew install --cask"
-    abbr bin "brew info"
-    abbr binc "brew info --cask"
-    abbr bs "brew search"
-    abbr zcat 'gzcat'
-    set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
-        eval /opt/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" "hook" $argv | source
-    else
-        if test -f "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
-            . "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
+    case Darwin ## for macos
+        eval (/opt/homebrew/bin/brew shellenv)
+        fish_add_path -a /opt/homebrew/Caskroom/miniforge/base/condabin
+        abbr bic "brew install --cask"
+        abbr bin "brew info"
+        abbr binc "brew info --cask"
+        abbr bs "brew search"
+        abbr zcat gzcat
+        set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
+        # >>> conda initialize >>>
+        # !! Contents within this block are managed by 'conda init' !!
+        if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
+            eval /opt/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" hook $argv | source
         else
-        fish_add_path -a "/opt/homebrew/Caskroom/miniforge/base/bin" 
+            if test -f "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
+                . "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
+            else
+                fish_add_path -a /opt/homebrew/Caskroom/miniforge/base/bin
+            end
         end
-    end
-    # <<< conda initialize <<< 
+        # <<< conda initialize <<< 
 
-  case Linux
-   # >>> conda initialize >>>
-   # !! Contents within this block are managed by 'conda init' !!
-    if test -f ~/miniconda3/bin/conda
-        eval ~/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-    else
-        if test -f "~/miniconda3/etc/fish/conf.d/conda.fish"
-            . "~/miniconda3/etc/fish/conf.d/conda.fish"
+    case Linux
+        # >>> conda initialize >>>
+        # !! Contents within this block are managed by 'conda init' !!
+        if test -f ~/miniconda3/bin/conda
+            eval ~/miniconda3/bin/conda "shell.fish" hook $argv | source
         else
-            set -x PATH "~/miniconda3/bin" $PATH
+            if test -f "~/miniconda3/etc/fish/conf.d/conda.fish"
+                . "~/miniconda3/etc/fish/conf.d/conda.fish"
+            else
+                set -x PATH "~/miniconda3/bin" $PATH
+            end
         end
-    end
-    # <<< conda initialize <<<
-    
+        # <<< conda initialize <<<
+
 end
 
 ## cursor
@@ -67,9 +67,11 @@ set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings
 
 
-# abbr vi "nvim"
-# abbr rm "rm -i"
+abbr v nvim
+abbr rm "rm -i"
+abbr s "kitten ssh"
 alias rm='rm -i'
+
 
 # starship init fish | source
 zoxide init --cmd cd fish | source
@@ -113,47 +115,47 @@ end
 ## fish shell cursor
 # https://github.com/fish-shell/fish-shell/issues/7458
 function fish_mode_prompt
-  switch $fish_bind_mode
-    case default
-      echo -en "\e[2 q"
-      set_color -o brwhite
-      echo "["
-      set_color -o brred
-      echo "N"
-      set_color -o brwhite
-      echo "]"
-    case insert
-      echo -en "\e[6 q"
-      set_color -o brwhite
-      echo "["
-      set_color -o brgreen
-      echo "I"
-      set_color -o brwhite
-      echo "]"
-    case replace_one
-      echo -en "\e[4 q"
-      set_color -o brwhite
-      echo "["
-      set_color -o bryellow
-      echo "R"
-      set_color -o brwhite
-      echo "]"
-    case visual
-      echo -en "\e[2 q"
-      set_color -o brwhite
-      echo "["
-      set_color -o brmagenta
-      echo "V"
-      set_color -o brwhite
-      echo "]"
-    case '*'
-      echo -en "\e[2 q"
-      set_color -o brwhite
-      echo "["
-      set_color -o brred
-      echo "?"
-      set_color -o brwhite
-      echo "]"
-  end
-  set_color normal
+    switch $fish_bind_mode
+        case default
+            echo -en "\e[2 q"
+            set_color -o brwhite
+            echo "["
+            set_color -o brred
+            echo N
+            set_color -o brwhite
+            echo "]"
+        case insert
+            echo -en "\e[6 q"
+            set_color -o brwhite
+            echo "["
+            set_color -o brgreen
+            echo I
+            set_color -o brwhite
+            echo "]"
+        case replace_one
+            echo -en "\e[4 q"
+            set_color -o brwhite
+            echo "["
+            set_color -o bryellow
+            echo R
+            set_color -o brwhite
+            echo "]"
+        case visual
+            echo -en "\e[2 q"
+            set_color -o brwhite
+            echo "["
+            set_color -o brmagenta
+            echo V
+            set_color -o brwhite
+            echo "]"
+        case '*'
+            echo -en "\e[2 q"
+            set_color -o brwhite
+            echo "["
+            set_color -o brred
+            echo "?"
+            set_color -o brwhite
+            echo "]"
+    end
+    set_color normal
 end
