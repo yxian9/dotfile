@@ -18,8 +18,8 @@ return {
           end)
         elseif cmp.visible() then
           cmp.confirm({ select = true })
-        elseif has_words_before() then
-          cmp.complete()
+        -- elseif has_words_before() then
+        --   cmp.complete()
         else
           fallback()
         end
