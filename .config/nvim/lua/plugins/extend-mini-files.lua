@@ -42,6 +42,10 @@ return {
       options = {
         use_as_default_explorer = true,
       },
+      mappings = {
+        -- enter and close mini.file
+        go_in_plus = "<cr>",
+      },
     },
   },
   {
@@ -65,6 +69,7 @@ return {
     keys = {
       { "<leader>e", false },
       { "<leader>E", false },
+      { "<leader>be", false },
     },
   },
 }
