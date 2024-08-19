@@ -16,7 +16,8 @@ return {
           vim.schedule(function()
             vim.snippet.jump(1)
           end)
-        elseif cmp.visible() then
+        elseif cmp.visible() and has_words_before() then
+          -- elseif cmp.visible() then
           cmp.confirm({ select = true })
         -- elseif has_words_before() then
         --   cmp.complete()
