@@ -11,8 +11,9 @@ return {
     "rcarriga/nvim-notify",
     "nvim-tree/nvim-web-devicons",
   },
+  lazy = "leetcode.nvim" ~= vim.fn.argv()[1],
   opts = {
-    -- configuration goes here
+    arg = "leetcode.nvim",
     lang = "typescript",
     cn = { -- leetcode.cn
       enabled = true, ---@type boolean
