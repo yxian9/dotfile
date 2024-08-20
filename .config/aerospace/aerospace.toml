@@ -64,7 +64,7 @@ outer.right = 5
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 [mode.main.binding]
-cmd-shift-f = 'fullscreen'
+cmd-alt-shift-f = 'fullscreen'
 # All possible keys:
 # - Letters.        a, b, c, ..., z
 # - Numbers.        0, 1, 2, ..., 9
@@ -101,19 +101,19 @@ cmd-alt-shift-j = 'move down'
 cmd-alt-shift-k = 'move up'
 cmd-alt-shift-l = 'move right'
 
-cmd-ctrl-shift-1 = 'move-node-to-workspace 1'
-cmd-ctrl-shift-2 = 'move-node-to-workspace 2'
-cmd-ctrl-shift-3 = 'move-node-to-workspace 3'
-cmd-ctrl-shift-4 = 'move-node-to-workspace 4'
-cmd-ctrl-shift-5 = 'move-node-to-workspace 5'
-cmd-ctrl-shift-6 = 'move-node-to-workspace 6'
-cmd-ctrl-shift-7 = 'move-node-to-workspace 7'
-cmd-ctrl-shift-8 = 'move-node-to-workspace 8'
-cmd-ctrl-shift-9 = 'move-node-to-workspace 9'
-cmd-ctrl-shift-b = 'move-node-to-workspace B' # for Browser
-cmd-ctrl-shift-e = 'move-node-to-workspace E' # for File Explorer (Finder)
-cmd-ctrl-shift-m = 'move-node-to-workspace M' # for Music
-cmd-ctrl-shift-t = 'move-node-to-workspace T' # for Terminal
+cmd-alt-ctrl-shift-1 = 'move-node-to-workspace 1'
+cmd-alt-ctrl-shift-2 = 'move-node-to-workspace 2'
+cmd-alt-ctrl-shift-3 = 'move-node-to-workspace 3'
+cmd-alt-ctrl-shift-4 = 'move-node-to-workspace 4'
+cmd-alt-ctrl-shift-5 = 'move-node-to-workspace 5'
+cmd-alt-ctrl-shift-6 = 'move-node-to-workspace 6'
+cmd-alt-ctrl-shift-7 = 'move-node-to-workspace 7'
+cmd-alt-ctrl-shift-8 = 'move-node-to-workspace 8'
+cmd-alt-ctrl-shift-9 = 'move-node-to-workspace 9'
+cmd-alt-ctrl-shift-b = 'move-node-to-workspace B' # for Browser
+cmd-alt-ctrl-shift-e = 'move-node-to-workspace E' # for File Explorer (Finder)
+cmd-alt-ctrl-shift-m = 'move-node-to-workspace M' # for Music
+cmd-alt-ctrl-shift-t = 'move-node-to-workspace T' # for Terminal
 
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
@@ -159,4 +159,10 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 [workspace-to-monitor-force-assignment]
-6 = '^built-in retina display$'
+7 = '^built-in retina display$'
+8 = '^built-in retina display$'
+9 = '^built-in retina display$'
+
+[[on-window-detected]]
+if.app-id = 'com.cisco.anyconnect.gui'
+run = 'layout floating'
