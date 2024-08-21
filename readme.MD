@@ -51,5 +51,10 @@ fisher install PatrickF1/fzf.fish
 # other alternative
 # curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
-
+macOS setting:
+turn on
+- "Keyboard navigation" in keyboard shortcuts.
+- "Group diwndows by application"
+turn off 
+- "Displays have separate Spaces"
 
