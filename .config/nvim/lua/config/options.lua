@@ -5,3 +5,4 @@ local opt = vim.opt
 opt.pumblend = 0
 opt.winbar = "%=%m %f"
 opt.clipboard = "unnamedplus"
+vim.o.cursorcolumn = true
