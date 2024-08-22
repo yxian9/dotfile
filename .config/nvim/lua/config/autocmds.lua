@@ -20,3 +20,15 @@ vim.api.nvim_create_autocmd("FocusLost", {
   pattern = "*",
   command = "wa",
 })
+
+local augroup = vim.api.nvim_create_augroup
+local autocmds = vim.api.nvim_create_autocmd
+augroup("discontinue_comments", { clear = true })
+autocmds({ "FileType" }, {
+  pattern = { "*" },
+  callback = function()
+    vim.opt.formatoptions = vim.opt.formatoptions - "o"
+  end,
+  group = "discontinue_comments",
+  desc = "Dont't continue comments with o/O",
+})
