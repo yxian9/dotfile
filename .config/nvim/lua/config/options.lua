@@ -6,4 +6,5 @@ opt.pumblend = 0
 opt.winbar = "  %m %f"
 opt.clipboard = "unnamedplus"
 vim.o.cursorcolumn = true
+vim.o.cursorline = false
 opt.cursorline = false
