@@ -11,6 +11,7 @@ return {
         replace = ";r",
         update_n_lines = ";n",
       },
+      silent = true,
     },
   },
 

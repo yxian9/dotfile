@@ -13,3 +13,10 @@ vim.api.nvim_create_autocmd("InsertEnter", {
   pattern = "*",
   command = "set nocursorline nocursorcolumn",
 })
+
+vim.api.nvim_create_augroup("auto_save", { clear = true })
+vim.api.nvim_create_autocmd("FocusLost", {
+  group = "auto_save",
+  pattern = "*",
+  command = "wa",
+})
