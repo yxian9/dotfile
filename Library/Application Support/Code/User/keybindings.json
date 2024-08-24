@@ -1,5 +1,6 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+  // refresh browser
   {
     "key": "shift+r",
     "command": "workbench.files.action.refreshFilesExplorer",
@@ -53,7 +54,7 @@
     "command": "explorer.openAndPassFocus",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
   },
-  // 在新标签组打开文件
+  // 在新tab打开文件
   {
     "key": "shift+o",
     "command": "explorer.openToSide",
@@ -77,7 +78,7 @@
     },
     "label": "input indicative of new python cell"
   },
-  // use vim to move when gh hover.
+  // use vim to move when gh hover in gh model
   {
     "key": "h",
     "command": "editor.action.scrollLeftHover",
@@ -167,7 +168,7 @@
     "key": "shift+cmd+r",
     "command": "workbench.view.remote"
   },
-
+  // jupyter note related action
   {
     "key": "ctrl+; v",
     "command": "jupyter.selectCell",
@@ -199,14 +200,14 @@
     "args": "edt ",
     "when": "editorTextFocus"
   },
-  {
-    "key": "cmd+p",
-    "command": "workbench.action.quickOpenPreviousEditor"
-  },
-  {
-    "key": "cmd+p",
-    "command": "-workbench.action.quickOpen"
-  },
+  // {
+  //   "key": "cmd+p",
+  //   "command": "workbench.action.quickOpenPreviousEditor"
+  // },
+  // {
+  //   "key": "cmd+p",
+  //   "command": "-workbench.action.quickOpen"
+  // },
   {
     "key": "ctrl+=",
     "command": "workbench.action.navigateForward",

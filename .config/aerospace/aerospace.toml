@@ -114,6 +114,7 @@ cmd-alt-ctrl-shift-b = 'move-node-to-workspace 🌎' # for Browser
 cmd-alt-ctrl-shift-e = 'move-node-to-workspace 🙈' # for File Explorer (Finder)
 cmd-alt-ctrl-shift-m = 'move-node-to-workspace 🤖' # for Music
 cmd-alt-ctrl-shift-t = 'move-node-to-workspace 🎮' # for Terminal
+cmd-alt-ctrl-shift-c = 'move-node-to-workspace 👾' # for Code
 
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
@@ -128,6 +129,8 @@ alt-b = 'workspace 🌎' # for Browser
 alt-e = 'workspace 🙈' # for File Explorer (Finder)
 alt-m = 'workspace 🤖' # for Music
 alt-t = 'workspace 🎮' # for Terminal
+alt-c = 'workspace 👾' # for code
+alt-v = 'workspace v' # for code
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
