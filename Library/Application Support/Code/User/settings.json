@@ -58,7 +58,7 @@
   },
   "editor.fontLigatures": true,
   "editor.fontSize": 17,
-  "editor.lineHeight": 25 ,
+  "editor.lineHeight": 25,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.guides.bracketPairs": true,
@@ -68,7 +68,7 @@
   "editor.guides.indentation": true,
   "editor.guides.highlightActiveIndentation": true,
   "editor.occurrencesHighlight": "off",
-  "editor.renderLineHighlight": "line",
+  "editor.renderLineHighlight": "gutter",
   "editor.selectionHighlight": false,
   "editor.stickyScroll.enabled": false,
   "editor.suggest.insertMode": "replace",
@@ -98,10 +98,10 @@
   "git.openRepositoryInParentFolders": "never",
   "github.copilot.enable": {
     "quarto": false,
-    // "*": true,
     "markdown": true,
     "plaintext": false,
-    "scminput": false
+    "scminput": false,
+    "*": false
   },
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "interactiveWindow.executeWithShiftEnter": false,
@@ -260,13 +260,21 @@
     },
     // vim easymotion
 
-    {
-      "before": ["g", "e", " "],
-      "after": ["leader", "leader", "s"]
-    },
+    // {
+    //   "before": ["g", "e", " "],
+    //   "after": ["leader", "leader", "s"]
+    // },
     {
       "before": ["g", "e", "w"],
       "after": ["leader", "leader", "w"]
+    },
+    {
+      "before": ["g", "e", "k"],
+      "after": ["leader", "leader", "k"]
+    },
+    {
+      "before": ["g", "e", "j"],
+      "after": ["leader", "leader", "j"]
     },
     {
       "before": ["g", "e", "b"],
@@ -890,5 +898,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "excalidraw.theme": "dark",
-  "makefile.configureOnOpen": false // for list selection
+  "makefile.configureOnOpen": false,
+  "editor.accessibilitySupport": "off",
+  "window.confirmBeforeClose": "always" // for list selection
 }
