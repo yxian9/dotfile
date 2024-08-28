@@ -22,8 +22,8 @@ $ stow .
 
 brew install
 ```
-brew install wget lazygit zoxide fzf yzi fish bat ripgrep neovim tmux stow jq node  
-
+brew install wget lazygit zoxide fzf yazi fish bat ripgrep neovim tmux stow jq node  
+brew install git-delta
 brew install --cask nikitabobko/tap/aerospace@0.12.0
 brew install --cask font-victor-mono-nerd-font
 brew install --cask kitty
