@@ -1,0 +1,41 @@
+[user]
+	name = Yu
+[core]
+pager = delta
+editor = nvim
+autocrlf = input
+; excludesfile = /Users/yxiang/.gitignore
+[delta]
+    navigate = true    # use n and N to move between diff sections`
+		line-numbers = true
+[diff]
+   tool = vimdiff
+  colorMoved = default
+[merge]
+    conflictstyle = zdiff3
+    tool = vimdiff
+[mergetool "vimdiff"]
+    cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED \
+          -c '$wincmd w' -c 'wincmd J'
+; [difftool "vscode"]
+; cmd = "code --wait --diff $LOCAL $REMOTE"
+[alias]
+ss = status -s
+lol = log --oneline --graph --decorate --all
+[credential]
+helper = osxkeychain
+
+; [difftool "sourcetree"]
+; 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+; [mergetool "sourcetree"]
+; 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+; 	trustExitCode = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[init]
+	defaultBranch = main
+; [diftool "vscode"]
+; 	cmd = "code --wait --diff  "

@@ -60,6 +60,7 @@ fish_add_path ~/.config/bin
 fish_add_path /usr/local/go/bin
 fish_add_path /Users/yxiang/go/bin
 
+set -x XDG_CONFIG_HOME $HOME/.config
 set -Ux EDITOR nvim
 set -Ux OPENER nvim
 
