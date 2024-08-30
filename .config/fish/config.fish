@@ -1,6 +1,7 @@
 switch (uname)
     case Darwin ## for macos
         eval (/opt/homebrew/bin/brew shellenv)
+        fish_add_path -a /opt/homebrew/bin/
         fish_add_path -a /opt/homebrew/Caskroom/miniforge/base/condabin
         abbr bic "brew install --cask"
         abbr bin "brew info"

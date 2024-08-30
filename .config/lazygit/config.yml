@@ -27,6 +27,8 @@ os:
 gui:
   showFileTree: false
   nerdFontsVersion: "3"
+  mainPanelSplitMode: "vertical"
+  enlargedSideViewLocation: top
   theme:
     activeBorderColor:
       - "#ff9e64"
