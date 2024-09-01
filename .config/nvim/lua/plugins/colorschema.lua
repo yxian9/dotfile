@@ -49,4 +49,20 @@ return {
       },
     },
   },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    opts = {
+      style = "night",
+      on_colors = function(colors)
+        colors.border = "#c0caf5"
+      end,
+    },
+  },
+  -- {
+  --   "nvim-zh/colorful-winsep.nvim",
+  --   disable = true,
+  --   config = true,
+  --   event = { "WinLeave" },
+  -- },
 }
