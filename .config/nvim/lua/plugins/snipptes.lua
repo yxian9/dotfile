@@ -1,5 +1,13 @@
 return {
   "nvim-cmp",
+  opts = function(_, opts)
+    for _, source in ipairs(opts.sources) do
+      if source.name == "snippets" then
+        source.keyword_length = 2
+        break
+      end
+    end
+  end,
   keys = {
     {
       "<Tab>",
