@@ -3,14 +3,14 @@ return {
     "echasnovski/mini.files",
     keys = {
       {
-        "<leader>E",
+        "<leader>e",
         function()
           require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
         end,
         desc = "Open mini.files (directory of current file)",
       },
       {
-        "<leader>e",
+        "<leader>E",
         function()
           require("mini.files").open(vim.uv.cwd(), true)
         end,
@@ -24,6 +24,17 @@ return {
         "<leader>fM",
         false,
       },
+      -- {
+      --   "<leader>fo",
+      --   function()
+      --     local mf = require("mini.files")
+      --     if not mf.close() then
+      --       mf.open(vim.api.nvim_buf_get_name(0))
+      --       mf.reveal_cwd()
+      --     end
+      --   end,
+      --   desc = "mini current file",
+      -- },
       -- {
       --   "<leader>fm",
       --   function()
