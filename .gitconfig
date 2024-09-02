@@ -4,6 +4,7 @@
     pager = delta
     editor = nvim
     autocrlf = input
+	  excludesFile = ~/.gitignore_global
 [delta]
     navigate = true    # use n and N to move between diff sections`
 		line-numbers = true
