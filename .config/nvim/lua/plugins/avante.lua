@@ -5,6 +5,16 @@ return {
   opts = {
     -- add any opts here
     provider = "copilot",
+    mappings = {
+      diff = {
+        ours = "<leader>ao",
+        theirs = "<leader>al",
+        both = "cb",
+        cursor = "cc",
+        next = "]x",
+        prev = "[x",
+      },
+    },
   },
   dependencies = {
     -- "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
