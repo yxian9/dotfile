@@ -1,10 +1,14 @@
 return {
   "yetone/avante.nvim",
-  event = "VeryLazy",
+  --event = "VeryLazy",
+  lazy = true,
   build = "make", -- This is Optional, only if you want to use tiktoken_core to calculate tokens count
   opts = {
     -- add any opts here
     provider = "copilot",
+    behaviour = {
+      auto_suggestions = true,
+    },
     mappings = {
       diff = {
         ours = "<leader>ao",
@@ -14,6 +18,16 @@ return {
         next = "]x",
         prev = "[x",
       },
+    },
+  },
+  keys = {
+    {
+      "<leader>aa",
+      function()
+        require("avante.api").ask()
+      end,
+      mode = { "n", "v" },
+      desc = "avante: ask",
     },
   },
   dependencies = {

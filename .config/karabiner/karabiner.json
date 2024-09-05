@@ -18,6 +18,27 @@
                 },
                 "rules": [
                     {
+                        "description": "left_command + space -> enter",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "left_option -> Command+V if pressed alone",
                         "manipulators": [
                             {
