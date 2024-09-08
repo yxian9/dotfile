@@ -7,3 +7,4 @@ wallpaper
 .config/tmux/plugins/
 .DS_Store
 .config/fish/fish_variables
+.config/tmux/*.log
