@@ -7,6 +7,7 @@ vim.keymap.set("t", "<esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 vim.keymap.del("t", "<esc><esc>")
 vim.keymap.del("n", "<c-/>")
 vim.keymap.set("i", "<C-a>", "<C-r>0", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-j>", "<Nop>", { noremap = true, silent = true })
 
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true })
 vim.keymap.set(
