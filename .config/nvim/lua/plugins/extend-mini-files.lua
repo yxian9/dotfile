@@ -16,14 +16,8 @@ return {
         end,
         desc = "Open mini.files (cwd)",
       },
-      {
-        "<leader>fm",
-        false,
-      },
-      {
-        "<leader>fM",
-        false,
-      },
+      { "<leader>fm", false },
+      { "<leader>fM", false },
       -- {
       --   "<leader>fo",
       --   function()
@@ -35,13 +29,6 @@ return {
       --   end,
       --   desc = "mini current file",
       -- },
-      -- {
-      --   "<leader>fm",
-      --   function()
-      --     require("mini.files").open(LazyVim.root(), true)
-      --   end,
-      --   desc = "Open mini.files (root)",
-      -- },
     },
     opts = {
       windows = {
@@ -51,7 +38,7 @@ return {
         width_preview = 100,
       },
       options = {
-        use_as_default_explorer = true,
+        use_as_default_explorer = false,
       },
       mappings = {
         -- enter and close mini.file
@@ -61,6 +48,12 @@ return {
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
+    lazy = true,
+    -- opts = {
+    --   filesystem = {
+    --     hijack_netrw_behavior = " disabled",
+    --   },
+    -- },
     -- opts = {
     --   filesystem = {
     --     filtered_items = {

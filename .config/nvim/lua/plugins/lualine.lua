@@ -1,10 +1,17 @@
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
+  dependencies = {
+    "meuter/lualine-so-fancy.nvim",
+  },
   opts = function(_, opts)
     local icons = LazyVim.config.icons
-    opts.options.component_separators = { left = ">", right = "" }
-    -- opts.options.section_separators = ""
+    opts.options.theme = "auto"
+    opts.options.component_separators = { left = ">", right = "│" }
+    opts.options.section_separators = ""
+    opts.sections.lualine_a = {
+      { "fancy_mode", width = 3 },
+    }
     opts.sections.lualine_c = {
       LazyVim.lualine.root_dir(),
       {
@@ -35,6 +42,6 @@ return {
     --   end,
     -- })
     -- remove timestamp
-    opts.sections.lualine_z = {}
+    opts.sections.lualine_z = { { "fancy_lsp_servers" } }
   end,
 }
