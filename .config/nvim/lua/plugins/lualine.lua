@@ -6,11 +6,12 @@ return {
   },
   opts = function(_, opts)
     local icons = LazyVim.config.icons
-    opts.options.theme = "auto"
-    opts.options.component_separators = { left = ">", right = "│" }
+    opts.options.theme = "gruvbox_dark"
+    opts.options.component_separators = { left = ">", right = "⏽" }
     opts.options.section_separators = ""
     opts.sections.lualine_a = {
-      { "fancy_mode", width = 3 },
+      -- { "fancy_mode" }, --, width = 5 },
+      { "mode" },
     }
     opts.sections.lualine_c = {
       LazyVim.lualine.root_dir(),
@@ -29,10 +30,14 @@ return {
         separator = "",
         padding = { left = 1, right = 0 },
       },
+      {
+        "navic",
+        color_correction = "dynamic",
+        padding = { right = 0 },
+      },
     }
     -- https://github.com/LazyVim/LazyVim/pull/4231
-    table.insert(opts.sections.lualine_c, { "navic", color_correction = "dynamic" })
-
+    -- table.insert(opts.sections.lualine_c, { "navic", color_correction = "dynamic" })
     -- table.insert(opts.sections.lualine_c, {
     --   function()
     --     return require("nvim-navic").get_location()
