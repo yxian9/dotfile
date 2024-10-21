@@ -64,6 +64,8 @@ outer.right = 5
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 [mode.main.binding]
+cmd-h = []                     # Disable "hide application"
+cmd-alt-h = []                 # Disable "hide others"
 cmd-alt-shift-f = 'fullscreen'
 # All possible keys:
 # - Letters.        a, b, c, ..., z
