@@ -6,4 +6,7 @@ opt.pumblend = 0
 opt.scrolloff = 10
 opt.winbar = "  %m %f"
 opt.clipboard = "unnamedplus"
--- opt.cursorline = false
+opt.cursorline = false
+-- vim.cmd([[highlight LineNr guifg=#ff9900]])
+-- vim.cmd("hi LineNr guifg=#ff9901")
+
