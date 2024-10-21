@@ -74,6 +74,7 @@ abbr g lazygit
 abbr rm "rm -i"
 abbr m spotify_player
 abbr s "kitten ssh"
+abbr lc "nvim leetcode.nvim"
 
 
 # starship init fish | source
