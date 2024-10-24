@@ -13,10 +13,10 @@ return {
   lazy = "leetcode.nvim" ~= vim.fn.argv()[1],
   keys = {
     { "<leader>9l", "<cmd>Leet list<cr>", { desc = "leetcode list" } },
+    { "<leader>9y", "<cmd>Leet yank<cr>", { desc = "leetcode yank" } },
     { "<leader>9c", "<cmd>Leet lang<cr>", { desc = "leetcode lang" } },
     { "<leader>9s", "<cmd>Leet submit<cr>", { desc = "leetcode submit" } },
     { "<leader>9r", "<cmd>Leet run<cr>", { desc = "leetcode run" } },
-    { "<leadey>9y", "<cmd>Leet yank<cr>", { desc = "leetcode yank" } },
   },
   opts = {
     arg = "leetcode.nvim",
@@ -30,17 +30,11 @@ return {
       ["python3"] = {
         before = {
           "from typing import Optional, List",
-          [[
-          class TreeNode:
-              def __init__(self, val=0, left=None, right=None):
-                  self.val = val
-                  self.left = left
-                  self.right = right 
-          ]],
+          "from type import TreeNode",
         },
       },
       ["typescript"] = {
-        before = { [[ import { TreeNode} from "./type" ]] },
+        before = { [[import { TreeNode} from "./type" ]] },
       },
       ["golang"] = {
         before = {
