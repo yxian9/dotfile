@@ -23,15 +23,17 @@ vim.api.nvim_create_autocmd("FocusLost", {
 
 -- set linenumber
 -- https://github.com/LazyVim/LazyVim/discussions/1892
+vim.api.nvim_create_augroup("line_highLight", { clear = true })
 vim.api.nvim_create_autocmd("BufRead", {
   callback = function()
     vim.api.nvim_set_hl(0, "LineNr", { fg = "#ff9900" })
   end,
+  group = "line_highLight",
 })
 
 local augroup = vim.api.nvim_create_augroup
-local autocmds = vim.api.nvim_create_autocmd
 augroup("discontinue_comments", { clear = true })
+local autocmds = vim.api.nvim_create_autocmd
 autocmds({ "FileType" }, {
   pattern = { "*" },
   callback = function()

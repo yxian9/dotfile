@@ -8,8 +8,10 @@ opt.winbar = "  %m %f"
 opt.clipboard = "unnamedplus"
 opt.cursorline = false
 opt.showcmd = false
--- vim.cmd([[highlight LineNr guifg=#ff9900]])
--- vim.cmd("hi LineNr guifg=#ff9901")
+opt.showmode = true
+
+-- vim.cmd([[highlight LineNr guifg=]])
+-- vim.cmd("hi LineNr guifg=")
 -- https://github.com/LazyVim/LazyVim/issues/556
 local float = { focusable = true, style = "minimal", border = "rounded" }
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, float)

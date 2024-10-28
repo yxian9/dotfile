@@ -6,24 +6,46 @@ return {
   },
   opts = function(_, opts)
     local icons = LazyVim.config.icons
-    opts.options.theme = "auto"
+    opts.options.theme = "tokyonight-storm"
     opts.options.component_separators = { left = ">", right = "⏽" }
     opts.options.section_separators = ""
-    opts.sections.lualine_a = {
-      -- { "fancy_mode" }, --, width = 5 },
-      { "mode" },
+    -- opts.options.refresh.statusline = 100
+    opts.sections.lualine_a = { { "fancy_mode", width = 1 } }
+    -- opts.sections.lualine_a = {  "mode"}
+    opts.sections.lualine_b = {
+      { "fancy_branch" },
+      {
+        "diff",
+        symbols = {
+          added = icons.git.added,
+          modified = icons.git.modified,
+          removed = icons.git.removed,
+        },
+        source = function()
+          local gitsigns = vim.b.gitsigns_status_dict
+          if gitsigns then
+            return {
+              added = gitsigns.added,
+              modified = gitsigns.changed,
+              removed = gitsigns.removed,
+            }
+          end
+        end,
+      },
+      -- { "fancy_diff" },
     }
     opts.sections.lualine_c = {
       LazyVim.lualine.root_dir(),
-      {
-        "diagnostics",
-        symbols = {
-          error = icons.diagnostics.Error,
-          warn = icons.diagnostics.Warn,
-          info = icons.diagnostics.Info,
-          hint = icons.diagnostics.Hint,
-        },
-      },
+      -- { "fancy_cwd", substitute_home = true },
+      -- {
+      --   "diagnostics",
+      --   symbols = {
+      --     error = icons.diagnostics.Error,
+      --     warn = icons.diagnostics.Warn,
+      --     info = icons.diagnostics.Info,
+      --     hint = icons.diagnostics.Hint,
+      --   },
+      -- },
       {
         "filetype",
         icon_only = true,
@@ -32,7 +54,7 @@ return {
       },
       {
         "navic",
-        color_correction = "dynamic",
+        color_correction = "static",
         padding = { right = 0 },
       },
     }
@@ -47,6 +69,36 @@ return {
     --   end,
     -- })
     -- remove timestamp
+    opts.sections.lualine_x = {
+      { "fancy_macro" },
+      {
+        function()
+          return "  " .. require("dap").status()
+        end,
+        cond = function()
+          return package.loaded["dap"] and require("dap").status() ~= ""
+        end,
+        color = function()
+          return LazyVim.ui.fg("Debug")
+        end,
+      },
+      -- { "fancy_diagnostics" },
+      {
+        "diagnostics",
+        symbols = {
+          error = icons.diagnostics.Error,
+          warn = icons.diagnostics.Warn,
+          info = icons.diagnostics.Info,
+          hint = icons.diagnostics.Hint,
+        },
+      },
+      { "fancy_searchcount" },
+      -- { "fancy_location" },
+    }
+    opts.sections.lualine_y = {
+      -- { "fancy_filetype" },
+      { "location", padding = { left = 0, right = 1 } },
+    }
     opts.sections.lualine_z = { { "fancy_lsp_servers" } }
   end,
 }
