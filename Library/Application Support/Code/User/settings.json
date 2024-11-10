@@ -896,5 +896,5 @@
   "excalidraw.theme": "dark",
   "makefile.configureOnOpen": false,
   "editor.accessibilitySupport": "off",
-  "window.confirmBeforeClose": "always" // for list selection
+  "window.confirmBeforeClose": "always"
 }
