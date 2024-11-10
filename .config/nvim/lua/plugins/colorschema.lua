@@ -53,6 +53,7 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = false,
+    enabled = false,
     opts = {
       style = "night",
       on_colors = function(colors)

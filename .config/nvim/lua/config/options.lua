@@ -6,7 +6,8 @@ opt.pumblend = 0
 opt.scrolloff = 10
 opt.winbar = "  %m %f"
 opt.clipboard = "unnamedplus"
-opt.cursorline = false
+opt.cursorline = true
+opt.cursorlineopt = "number"
 opt.showcmd = false
 opt.showmode = true
 

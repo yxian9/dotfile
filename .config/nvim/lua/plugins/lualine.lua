@@ -6,7 +6,8 @@ return {
   },
   opts = function(_, opts)
     local icons = LazyVim.config.icons
-    opts.options.theme = "tokyonight-storm"
+    -- opts.options.theme = "tokyonight-storm"
+    opts.options.theme = "auto"
     opts.options.component_separators = { left = ">", right = "⏽" }
     opts.options.section_separators = ""
     -- opts.options.refresh.statusline = 100
