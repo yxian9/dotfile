@@ -24,8 +24,9 @@ return {
       vim.g.gruvbox_material_ui_contrast = "high"
       vim.g.gruvbox_material_float_style = "bright"
       vim.g.gruvbox_material_statusline_style = "material"
+      vim.g.gruvbox_material_diagnostic_virtual_text = "highlighted"
       vim.g.gruvbox_material_cursor = "auto"
-      -- vim.g.gruvbox_material_sign_column_background = "grey"
+      vim.g.gruvbox_material_sign_column_background = "grey"
       vim.g.gruvbox_material_diagnostic_text_highlight = 1
       vim.g.gruvbox_material_better_performance = 1
       -- vim.cmd.colorscheme("gruvbox-material")
@@ -35,6 +36,15 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "gruvbox-material",
+      -- colorscheme = "tokyonight",
+      -- icons = {
+      --   diagnostics = {
+      --     Error = "",
+      --     Warn = "",
+      --     Hint = "",
+      --     Info = "",
+      --   },
+      -- },
     },
   },
   -- change trouble config
@@ -61,6 +71,16 @@ return {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
+      -- diagnostics = {
+      --   signs = {
+      --     text = {
+      --       [vim.diagnostic.severity.ERROR] = "",
+      --       [vim.diagnostic.severity.WARN] = "",
+      --       [vim.diagnostic.severity.HINT] = "",
+      --       [vim.diagnostic.severity.INFO] = "",
+      --     },
+      --   },
+      -- },
       inlay_hints = { enabled = false },
       servers = {
         gopls = {
