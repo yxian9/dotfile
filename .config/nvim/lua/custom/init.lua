@@ -253,7 +253,7 @@ local get_root = function()
   return vim.fn.fnamemodify(gomod, ":p:h")
 end
 
-local config_file = vim.fn.stdpath("config") .. "/.config/live-tests.json"
+local config_file = vim.fn.stdpath("config") .. "/live-tests.json"
 -- Execute the following code after the thing has been loaded
 vim.api.nvim_create_autocmd("VimEnter", {
   group = group,
