@@ -25,6 +25,7 @@ vim.api.nvim_create_autocmd("FocusLost", {
 -- https://github.com/LazyVim/LazyVim/discussions/1892
 vim.api.nvim_create_augroup("line_highLight", { clear = true })
 vim.api.nvim_create_autocmd("BufRead", {
+  once = true,
   callback = function()
     vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ff9900" })
   end,
