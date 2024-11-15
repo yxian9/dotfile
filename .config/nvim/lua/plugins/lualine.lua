@@ -55,7 +55,7 @@ return {
       },
       {
         "navic",
-        color_correction = "static",
+        color_correction = "dynamic",
         padding = { right = 0 },
       },
     }

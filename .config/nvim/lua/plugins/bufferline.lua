@@ -8,7 +8,13 @@ return {
       end,
       desc = "Select Buffer",
     },
-    { "<leader><BS>", LazyVim.ui.bufremove, desc = "Del buffer" },
+    {
+      "<leader><BS>",
+      function()
+        Snacks.bufdelete()
+      end,
+      desc = "Del buffer",
+    },
   },
   opts = {
     options = {

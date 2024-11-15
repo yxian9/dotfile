@@ -3,9 +3,9 @@
 -- Add any additional keymaps here
 
 --terminal
-vim.keymap.del("t", "<esc><esc>")
+-- vim.keymap.del("t", "<esc><esc>")
+-- vim.keymap.set("t", "<esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 vim.keymap.del("n", "<c-/>")
-vim.keymap.set("t", "<esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
 vim.keymap.set("i", "<C-a>", "<C-r>0", { noremap = true, silent = true })
@@ -19,6 +19,10 @@ vim.keymap.set(
   require("telescope.builtin").resume,
   { noremap = true, silent = true, desc = "Resume" }
 )
+
+vim.keymap.set("n", "<leader>hh", function()
+  Snacks.notifier.show_history()
+end, { desc = "show history" })
 
 function OpenTerminalRightSplit()
   vim.cmd("vsplit")

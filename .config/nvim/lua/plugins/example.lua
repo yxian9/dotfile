@@ -34,17 +34,12 @@ return {
   },
   {
     "LazyVim/LazyVim",
+    keys = {
+      { "<leader>l", false },
+    },
     opts = {
       colorscheme = "gruvbox-material",
       -- colorscheme = "tokyonight",
-      -- icons = {
-      --   diagnostics = {
-      --     Error = "",
-      --     Warn = "",
-      --     Hint = "",
-      --     Info = "",
-      --   },
-      -- },
     },
   },
   -- change trouble config
@@ -54,33 +49,22 @@ return {
     opts = { use_diagnostic_signs = true },
   },
 
-  -- override nvim-cmp and add cmp-emoji
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   dependencies = { "hrsh7th/cmp-emoji" },
-  --   ---@param opts cmp.ConfigSchema
-  --   opts = function(_, opts)
-  --     table.insert(opts.sources, { name = "emoji" })
-  --   end,
-  -- },
-
-  -- change some telescope options and a keymap to browse plugin files
-
-  -- add pyright to lspconfig
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
-      -- diagnostics = {
-      --   signs = {
-      --     text = {
-      --       [vim.diagnostic.severity.ERROR] = "",
-      --       [vim.diagnostic.severity.WARN] = "",
-      --       [vim.diagnostic.severity.HINT] = "",
-      --       [vim.diagnostic.severity.INFO] = "",
-      --     },
-      --   },
-      -- },
+      -- add pyright to lspconfig
+
+      diagnostics = {
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
+            [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
+            [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
+            [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
+          },
+        },
+      },
       inlay_hints = { enabled = false },
       servers = {
         gopls = {
