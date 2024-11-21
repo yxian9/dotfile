@@ -9,25 +9,45 @@ return {
     end
   end,
   keys = {
-    { "<Tab>", mode = { "i", "s" }, false },
+    { "<Tab>", mode = { "s" }, false },
     { "<S-Tab>", mode = { "i", "s" }, false },
+
     {
       "<C-j>",
       function()
-        return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>"
+        require("luasnip").jump(1)
       end,
-      expr = true,
+      -- expr = true,
       silent = true,
       mode = { "i", "s" },
     },
     {
       "<C-k>",
       function()
-        return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>"
+        require("luasnip").jump(-1)
       end,
-      expr = true,
+      -- expr = true,
       silent = true,
       mode = { "i", "s" },
     },
+    -- for native snippet
+    -- {
+    --   "<C-j>",
+    --   function()
+    --     return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>"
+    --   end,
+    --   expr = true,
+    --   silent = true,
+    --   mode = { "i", "s" },
+    -- },
+    -- {
+    --   "<C-k>",
+    --   function()
+    --     return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>"
+    --   end,
+    --   expr = true,
+    --   silent = true,
+    --   mode = { "i", "s" },
+    -- },
   },
 }
