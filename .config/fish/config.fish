@@ -4,6 +4,10 @@ switch (uname)
         fish_add_path -a /opt/homebrew/bin/
         fish_add_path -a /opt/homebrew/Caskroom/miniforge/base/condabin
         fish_add_path /opt/homebrew/opt/curl/bin
+        fish_add_path -a ~/.local/bin
+        fish_add_path ~/.config/bin
+        fish_add_path /usr/local/go/bin
+        fish_add_path ~/go/bin
         abbr bic "brew install --cask"
         abbr bin "brew info"
         abbr binc "brew info --cask"
@@ -58,9 +62,6 @@ set fish_cursor_replace underscore
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-fish_add_path ~/.config/bin
-fish_add_path /usr/local/go/bin
-fish_add_path /Users/yxiang/go/bin
 
 set -x XDG_CONFIG_HOME $HOME/.config
 set -Ux EDITOR nvim
