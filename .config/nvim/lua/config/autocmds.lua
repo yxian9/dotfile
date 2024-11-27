@@ -28,6 +28,8 @@ vim.api.nvim_create_autocmd("BufRead", {
   once = true,
   callback = function()
     vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ff9900" })
+    -- https://github.com/hrsh7th/nvim-cmp/issues/969
+    -- vim.cmd("highlight Pmenu guibg=NONE")
   end,
   group = "line_highLight",
 })

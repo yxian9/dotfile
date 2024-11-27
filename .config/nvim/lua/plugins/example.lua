@@ -9,62 +9,25 @@
 -- * override the configuration of LazyVim plugins
 return {
 
-  -- Configure LazyVim to load gruvbox
-  {
-    "sainnhe/gruvbox-material",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
-      vim.g.gruvbox_material_enable_italic = true
-      vim.g.gruvbox_material_transparent_background = 0
-      vim.g.gruvbox_material_foreground = "mix"
-      vim.g.gruvbox_material_background = "hard"
-      vim.g.gruvbox_material_ui_contrast = "high"
-      vim.g.gruvbox_material_float_style = "bright"
-      vim.g.gruvbox_material_statusline_style = "material"
-      vim.g.gruvbox_material_diagnostic_virtual_text = "highlighted"
-      vim.g.gruvbox_material_cursor = "auto"
-      vim.g.gruvbox_material_sign_column_background = "none"
-      vim.g.gruvbox_material_diagnostic_text_highlight = 1
-      vim.g.gruvbox_material_better_performance = 1
-      -- vim.cmd.colorscheme("gruvbox-material")
-    end,
-  },
-  {
-    "LazyVim/LazyVim",
-    keys = {
-      { "<leader>l", false },
-    },
-    opts = {
-      colorscheme = "gruvbox-material",
-      -- colorscheme = "tokyonight",
-    },
-  },
-  -- change trouble config
   {
     "folke/trouble.nvim",
     -- opts will be merged with the parent spec
     opts = { use_diagnostic_signs = true },
   },
-
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
-      -- add pyright to lspconfig
-
-      diagnostics = {
-        signs = {
-          text = {
-            [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
-            [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
-            [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
-            [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
-          },
-        },
-      },
+      -- diagnostics = {
+      --   signs = {
+      --     text = {
+      --       [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
+      --       [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
+      --       [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
+      --       [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
+      --     },
+      --   },
+      -- },
       inlay_hints = { enabled = false },
       servers = {
         gopls = {

@@ -3,6 +3,7 @@
 -- Add any additional options here
 local opt = vim.opt
 opt.pumblend = 0
+opt.winblend = 0
 opt.scrolloff = 10
 opt.winbar = "  %m %f"
 opt.clipboard = "unnamedplus"
