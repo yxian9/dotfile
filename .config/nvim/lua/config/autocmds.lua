@@ -45,3 +45,14 @@ autocmds({ "FileType" }, {
   group = "discontinue_comments",
   desc = "Dont't continue comments with o/O",
 })
+
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   group = vim.api.nvim_create_augroup("custom_highlights_gruvboxmaterial", {}),
+--   pattern = "gruvbox-material",
+--   callback = function()
+--     local config = vim.fn["gruvbox_material#get_configuration"]()
+--     local palette = vim.fn["gruvbox_material#get_palette"](config.background, config.foreground, config.colors_override)
+--     local set_hl = vim.fn["gruvbox_material#highlight"]
+--     set_hl("DiffAdd", palette.bg0, palette.bg_diff_blue)
+--   end,
+-- })

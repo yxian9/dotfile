@@ -30,6 +30,13 @@ return {
       desc = "avante: ask",
     },
   },
+  -- highlights = {
+  --   ---@type AvanteConflictHighlights
+  --   diff = {
+  --     -- current = "DiffAdd",
+  --     -- incoming = "DiffAdd",
+  --   },
+  -- },
   dependencies = {
     -- "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "echasnovski/mini.icons",
