@@ -7,6 +7,7 @@ return {
     opts = {
       colorscheme = "gruvbox-material",
       -- colorscheme = "tokyonight",
+      -- colorscheme = "catppuccin",
     },
   },
   {

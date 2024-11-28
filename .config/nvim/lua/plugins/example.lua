@@ -9,6 +9,7 @@
 -- * override the configuration of LazyVim plugins
 return {
 
+  "sindrets/diffview.nvim",
   {
     "folke/trouble.nvim",
     -- opts will be merged with the parent spec

@@ -10,6 +10,10 @@ return {
       next = "]x",
       prev = "[x",
     },
+    highlights = { -- They must have background color, otherwise the default color will be used
+      current = "DiffDelete",
+      incoming = "DiffChange",
+    },
   },
   keys = {
     {
