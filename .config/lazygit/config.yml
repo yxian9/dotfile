@@ -17,10 +17,20 @@ customCommands:
     subprocess: true
     description: "Show selected commit"
     # stream: true
-  - key: "M"
+  - key: "M" # https://github.com/jesseduffield/lazygit/issues/2461
     command: "git mergetool {{ .SelectedFile.Name }}"
     context: "files"
     loadingText: "opening git mergetool"
+    subprocess: true
+  - key: H
+    command: git restore --ours {{.SelectedFile.Name | quote}}
+    loadingText: "git select ours"
+    context: mergeConflicts
+    subprocess: true
+  - key: L
+    command: git restore --theirs {{.SelectedFile.Name | quote}}
+    loadingText: "git select theirs"
+    context: mergeConflicts
     subprocess: true
 os:
   editPreset: "nvim"
