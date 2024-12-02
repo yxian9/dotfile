@@ -2,7 +2,9 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  allBranchesLogCmd: "git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline "
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
+  showDivergenceFromBaseBranch: arrowAndNumber
 
 customCommands:
   - key: "<c-o>" # Ctrl-f (think "full screen") to show selected commit https://github.com/jesseduffield/lazygit/issues/1113
@@ -34,8 +36,10 @@ customCommands:
     subprocess: true
 os:
   editPreset: "nvim"
+  open: "nvim {{filename}}"
 
 gui:
+  statusPanelView: allBranchesLog
   showFileTree: false
   nerdFontsVersion: "3"
   mainPanelSplitMode: "vertical"

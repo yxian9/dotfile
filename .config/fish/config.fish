@@ -9,6 +9,7 @@ switch (uname)
         fish_add_path /usr/local/go/bin
         fish_add_path ~/go/bin
         abbr bic "brew install --cask"
+        abbr vm "NVIM_APPNAME=nvim_manual_config nvim"
         abbr bin "brew info"
         abbr binc "brew info --cask"
         abbr bs "brew search"
