@@ -23,16 +23,16 @@ vim.api.nvim_create_autocmd("FocusLost", {
 
 -- set linenumber
 -- https://github.com/LazyVim/LazyVim/discussions/1892
-vim.api.nvim_create_augroup("line_highLight", { clear = true })
-vim.api.nvim_create_autocmd("BufRead", {
-  once = true,
-  callback = function()
-    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ff9900" })
-    -- https://github.com/hrsh7th/nvim-cmp/issues/969
-    -- vim.cmd("highlight Pmenu guibg=NONE")
-  end,
-  group = "line_highLight",
-})
+-- vim.api.nvim_create_augroup("line_highLight", { clear = true })
+-- vim.api.nvim_create_autocmd("BufRead", {
+--   once = true,
+--   callback = function()
+--     vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ff9900" })
+--     -- https://github.com/hrsh7th/nvim-cmp/issues/969
+--     -- vim.cmd("highlight Pmenu guibg=NONE")
+--   end,
+--   group = "line_highLight",
+-- })
 
 local augroup = vim.api.nvim_create_augroup
 augroup("discontinue_comments", { clear = true })

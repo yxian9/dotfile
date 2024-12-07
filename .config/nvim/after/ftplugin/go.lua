@@ -2,6 +2,18 @@
 -- TODO: Clean up
 -- TODO: Support more granularity; only run tests for the current file, just current test, package, etc
 -- TODO: Support other languages, or at least structure it so that other languages can be supported
+
+vim.keymap.set("n", "<leader>ts", "<cmd>LiveTestStatus<cr>", { desc = "liveTest show status" })
+vim.keymap.set("n", "<leader>tt", "<cmd>LiveTestToggle<cr>", { desc = "LiveTest Toggle" })
+vim.keymap.set("n", "<leader>td", "<cmd>LiveTestDiag<cr>", { desc = "LiveTest Diag" })
+
+vim.keymap.set(
+  "n",
+  "<space>te",
+  'oif err != nil {\n\treturn fmt.Errorf("error %w", err)\n}<esc>k',
+  { noremap = true, silent = true, desc = "go error" }
+)
+
 local test_function_query_string = [[
 (
  (function_declaration

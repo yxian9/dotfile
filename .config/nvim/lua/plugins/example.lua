@@ -9,7 +9,6 @@
 -- * override the configuration of LazyVim plugins
 return {
 
-  "sindrets/diffview.nvim",
   {
     "folke/trouble.nvim",
     -- opts will be merged with the parent spec
@@ -36,6 +35,7 @@ return {
             gopls = {
               analyses = {
                 fieldalignment = false,
+                S1021 = false,
               },
             },
           },
