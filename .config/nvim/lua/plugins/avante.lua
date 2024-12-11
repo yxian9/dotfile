@@ -18,6 +18,7 @@ return {
         next = "]x",
         prev = "[x",
       },
+      hints = { enabled = false },
     },
   },
   keys = {
