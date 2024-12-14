@@ -49,6 +49,11 @@ return {
     --   },
     -- },
     opts = {
+      custom_highlights = function(colors)
+        return {
+          WinSeparator = { fg = colors.surface2 }, -- Set the border color
+        }
+      end,
       integrations = {
         aerial = true,
         alpha = true,
