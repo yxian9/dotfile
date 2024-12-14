@@ -5,14 +5,15 @@ return {
       { "<leader>l", false },
     },
     opts = {
-      colorscheme = "gruvbox-material",
+      -- colorscheme = "gruvbox-material",
       -- colorscheme = "tokyonight",
-      -- colorscheme = "catppuccin",
+      colorscheme = "catppuccin",
     },
   },
   {
     "sainnhe/gruvbox-material",
-    lazy = false,
+    lazy = true,
+    enabled = false, -- switch to catppuccin
     priority = 1000,
     config = function()
       -- Optionally configure and load the colorscheme
@@ -35,19 +36,18 @@ return {
       -- vim.cmd.colorscheme("gruvbox-material")
     end,
   },
-
   {
     "catppuccin/nvim",
-    enabled = false,
+    enabled = true,
     lazy = true,
     name = "catppuccin",
-    keys = {
-      {
-        "<leader>uC",
-        LazyVim.pick("colorscheme", { enable_preview = true }),
-        desc = "Colorscheme with preview",
-      },
-    },
+    -- keys = {
+    --   {
+    --     "<leader>uC",
+    --     LazyVim.pick("colorscheme", { enable_preview = true }),
+    --     desc = "Colorscheme with preview",
+    --   },
+    -- },
     opts = {
       integrations = {
         aerial = true,
@@ -77,7 +77,7 @@ return {
         navic = { enabled = true, custom_bg = "lualine" },
         neotest = true,
         neotree = true,
-        noice = true,
+        noice = false,
         notify = true,
         semantic_tokens = true,
         telescope = true,
@@ -89,8 +89,8 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
-    enabled = false,
+    lazy = true,
+    enabled = true,
     opts = {
       style = "night",
       on_colors = function(colors)

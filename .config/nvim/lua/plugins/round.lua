@@ -8,10 +8,10 @@ return {
       -- local cmp = require("cmp")
       opts.window = {
         -- completion = cmp.config.window.bordered(),
-        -- completion = {
-        --   border = "rounded",
-        --   -- winhighlight = "Normal:CmpDocNormal",
-        -- },
+        completion = {
+          border = "rounded",
+          -- winhighlight = "Normal:CmpDocNormal",
+        },
         documentation = {
           border = "rounded",
           winhighlight = "Normal:CmpDocNormal",

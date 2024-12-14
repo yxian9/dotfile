@@ -1,3 +1,7 @@
+-- if true then
+--   return {}
+-- end
+-- disable manual config
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
@@ -16,22 +20,13 @@ return {
     opts.sections.lualine_b = {
       { "fancy_branch" },
       {
-        "diff",
+        "diagnostics",
         symbols = {
-          added = icons.git.added,
-          modified = icons.git.modified,
-          removed = icons.git.removed,
+          error = icons.diagnostics.Error,
+          warn = icons.diagnostics.Warn,
+          info = icons.diagnostics.Info,
+          hint = icons.diagnostics.Hint,
         },
-        source = function()
-          local gitsigns = vim.b.gitsigns_status_dict
-          if gitsigns then
-            return {
-              added = gitsigns.added,
-              modified = gitsigns.changed,
-              removed = gitsigns.removed,
-            }
-          end
-        end,
       },
       -- { "fancy_diff" },
     }
@@ -55,7 +50,7 @@ return {
       },
       {
         "navic",
-        color_correction = "dynamic",
+        -- color_correction = "dynamic",
         padding = { right = 0 },
       },
     }
@@ -85,13 +80,22 @@ return {
       },
       -- { "fancy_diagnostics" },
       {
-        "diagnostics",
+        "diff",
         symbols = {
-          error = icons.diagnostics.Error,
-          warn = icons.diagnostics.Warn,
-          info = icons.diagnostics.Info,
-          hint = icons.diagnostics.Hint,
+          added = icons.git.added,
+          modified = icons.git.modified,
+          removed = icons.git.removed,
         },
+        source = function()
+          local gitsigns = vim.b.gitsigns_status_dict
+          if gitsigns then
+            return {
+              added = gitsigns.added,
+              modified = gitsigns.changed,
+              removed = gitsigns.removed,
+            }
+          end
+        end,
       },
       { "fancy_searchcount" },
       -- { "fancy_location" },

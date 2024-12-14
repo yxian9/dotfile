@@ -1,3 +1,4 @@
+local ls = require("luasnip")
 return {
   "nvim-cmp",
   opts = function(_, opts)
@@ -15,7 +16,10 @@ return {
     {
       "<C-j>",
       function()
-        require("luasnip").jump(1)
+        if ls.expand_or_jumpable() then
+          ls.expand_or_jump()
+        end
+        -- require("luasnip").jump(1)
       end,
       -- expr = true,
       silent = true,
@@ -24,7 +28,9 @@ return {
     {
       "<C-k>",
       function()
-        require("luasnip").jump(-1)
+        if ls.jumpable(-1) then
+          ls.jump(-1)
+        end
       end,
       -- expr = true,
       silent = true,

@@ -45,7 +45,7 @@ autocmds({ "FileType" }, {
   group = "discontinue_comments",
   desc = "Dont't continue comments with o/O",
 })
-
+--
 -- vim.api.nvim_create_autocmd("ColorScheme", {
 --   group = vim.api.nvim_create_augroup("custom_highlights_gruvboxmaterial", {}),
 --   pattern = "gruvbox-material",

@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 -- local logo = [[
 --
 --     ██╗   ██╗██╗███╗   ███╗
@@ -49,6 +52,7 @@ local header2 = {
 return {
   {
     "nvimdev/dashboard-nvim",
+    enabled = false,
     opts = {
       config = {
         -- header = vim.split(logo, "\n"),
