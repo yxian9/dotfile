@@ -4,7 +4,7 @@
 -- TODO: Support other languages, or at least structure it so that other languages can be supported
 
 vim.keymap.set("n", "<leader>ts", "<cmd>LiveTestStatus<cr>", { desc = "liveTest show status" })
-vim.keymap.set("n", "<leader>tt", "<cmd>LiveTestToggle<cr>", { desc = "LiveTest Toggle" })
+vim.keymap.set("n", "<leader>to", "<cmd>LiveTestToggle<cr>", { desc = "LiveTest Toggle" })
 vim.keymap.set("n", "<leader>td", "<cmd>LiveTestDiag<cr>", { desc = "LiveTest Diag" })
 
 vim.keymap.set(

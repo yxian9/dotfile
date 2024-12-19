@@ -4,16 +4,18 @@ return {
     keys = {
       { "<leader>l", false },
     },
+    version = "13.9.0",
     opts = {
       -- colorscheme = "gruvbox-material",
       -- colorscheme = "tokyonight",
-      colorscheme = "catppuccin",
+      -- colorscheme = "catppuccin",
+      colorscheme = "gruvbox-material",
     },
   },
   {
     "sainnhe/gruvbox-material",
     lazy = true,
-    enabled = false, -- switch to catppuccin
+    enabled = true, -- switch to catppuccin
     priority = 1000,
     config = function()
       -- Optionally configure and load the colorscheme

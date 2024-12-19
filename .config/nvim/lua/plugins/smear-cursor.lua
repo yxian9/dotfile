@@ -5,8 +5,8 @@ return {
   opts = {
     -- Smear cursor color. Defaults to Cursor GUI color if not set.
     -- Set to "none" to match the text color at the target cursor position.
-    -- cursor_color = "#d3cdc3",
-    cursor_color = "none",
+    cursor_color = "#d3cdc3",
+    -- cursor_color = "none",
 
     -- Background color. Defaults to Normal GUI background color if not set.
     -- normal_bg = "#282828",
