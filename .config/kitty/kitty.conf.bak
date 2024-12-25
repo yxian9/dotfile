@@ -1,7 +1,7 @@
 # Kitty theme
 #include ./Dracula.conf
 
-font_size 19.0
+font_size 18.0
 
 # font_family PlemolJP Console NF
 # italic_font VictorMono Nerd Font Italic
@@ -28,19 +28,23 @@ bold_italic_font VictorMono Nerd Font Bold Italic
 
 # Kitty's font was more spaced compared to alacritty's, tried font variations
 # but it didn't change, so I went with this, it works fine
-modify_font cell_height 5px
-modify_font cell_width 101%
-# modify_font cell_height 5px
+modify_font cell_width 98%
+modify_font cell_height 111%
+# modify_font cell_height 3px
 # modify_font baseline 1
 # modify_font underline_position -2
 # modify_font underline_thickness 150%
 # modify_font strikethrough_position 2px
 
-scrollback_lines 10000
+scrollback_lines 3000
 cursor_blink_interval 0
 cursor_stop_blinking_after 1 
 
-macos_option_as_alt yes
+cursor_trail 1
+# repaint_delay 10
+#cursor_trail_decay 0.1 0.4
+cursor_trail_start_threshold 100
+
 # The following command checks if tmux is installed.
 # If tmux is installed, it automatically attaches to an existing tmux session.
 # If no tmux session exists, a new one is created.
@@ -54,7 +58,7 @@ macos_option_as_alt yes
 
 # When you do fn+ctrl+shift+2 it opens the kitty file in the editor below
 editor /opt/homebrew/bin/nvim
-
+disable_ligatures   never
 # These colors match what I have in my alacritty theme
 # Commenting them as they're set by the theme on the top
 # foreground #CDD6F4
@@ -64,7 +68,11 @@ editor /opt/homebrew/bin/nvim
 # "yes" disables round corners and hides the title bar 
 # "titlebar-only" leaves round corners but hides title bar
 # hide_window_decorations yes
-hide_window_decorations titlebar-only
+# hide_window_decorations titlebar-only
+macos_show_window_title_in none
+macos_titlebar_color #272727
+macos_menubar_title_max_length 0
+macos_option_as_alt yes
 tab_title_template "{index}: {title.split('/')[-1]}"
 
 
@@ -72,11 +80,11 @@ tab_title_template "{index}: {title.split('/')[-1]}"
 #: window border). A single value sets all four sides. Two values set
 #: the vertical and horizontal sides. Three values set top, horizontal
 #: and bottom. Four values set top, right, bottom and left.
-window_padding_width 25 2 6 3
+window_padding_width 1 2 
 background_opacity 1 
 
 clipboard_control write-clipboard write-primary read-clipboard read-primary
-
+paste_actions no-op
 # scrollback_pager nvim -u ~/.config/nvim/kitty_page.lua -R -M -
 
 scrollback_pager nvim -u NONE -R -M -c 'lua require("kitty+page")(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)' -
@@ -102,9 +110,14 @@ tab_bar_style slant
 
 
 copy_on_select yes
-
-
+enabled_layouts splits:split_axis=horizontal
+map f6 launch --location=vsplit
+map f5 launch --location=hsplit
+map ctrl+left neighboring_window left
+map ctrl+right neighboring_window right
+map ctrl+up neighboring_window up
+map ctrl+down neighboring_window down
 # BEGIN_KITTY_THEME
-# One Half Dark
+# Tokyo Night Moon
 include current-theme.conf
 # END_KITTY_THEME

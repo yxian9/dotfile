@@ -1,7 +1,7 @@
 return {
   "sphamba/smear-cursor.nvim",
   event = "VeryLazy",
-  enabled = true,
+  enabled = false,
   opts = {
     -- Smear cursor color. Defaults to Cursor GUI color if not set.
     -- Set to "none" to match the text color at the target cursor position.

@@ -4,6 +4,8 @@
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_eslint_auto_format = false
 vim.highlight.priorities.semantic_tokens = 95
+vim.g.snacks_animate = false
+vim.g.lazyvim_picker = "fzf"
 -- vim.g.lazyvim_python_lsp = "basedpyright"
 -- vim.opt.formatoptions = vim.opt.formatoptions - "o"
 
@@ -17,7 +19,6 @@ opt.cursorline = true
 opt.cursorlineopt = "number"
 opt.showcmd = false
 opt.showmode = true
-
 -- vim.cmd([[highlight LineNr guifg=]])
 -- vim.cmd("hi LineNr guifg=")
 -- https://github.com/LazyVim/LazyVim/issues/556
