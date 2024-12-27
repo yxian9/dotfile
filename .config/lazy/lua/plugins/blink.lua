@@ -12,11 +12,9 @@ return {
           },
         },
       },
-      documentation = {
-        window = { border = "rounded" },
-      },
+      documentation = { window = { border = "rounded" } },
     },
-    signature = { window = { border = "rounded" } },
+    signature = { window = { border = "single" } },
     keymap = {
       preset = "none",
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
