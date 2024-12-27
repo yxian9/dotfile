@@ -39,8 +39,10 @@ return {
       enabled = true,
       view = "cmdline",
       format = {
+        cmdline = { pattern = "^:", icon = ">", lang = "vim", conceal = false },
         filter = { conceal = false, title = "bash" },
         lua = { conceal = false },
+        help = { conceal = false },
       },
     },
     -- views = {
