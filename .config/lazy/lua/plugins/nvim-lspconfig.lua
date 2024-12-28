@@ -14,8 +14,11 @@ return {
       servers = {
         tailwindcss = {
           mason = false,
-          -- exclude a filetype from the default_config
-          filetypes_exclude = { "markdown", "typescript", "javascript" },
+          root_dir = function(...)
+            require("lspconfig").util.root_pattern("tailwind.config.cjs", "tailwind.config.js", "postcss.config.js")(
+              ...
+            )
+          end,
         },
         denols = {
           mason = false,
