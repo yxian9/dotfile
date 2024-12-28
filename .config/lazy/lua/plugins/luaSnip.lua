@@ -13,7 +13,9 @@ return {
       {
         "rafamadriz/friendly-snippets",
         config = function()
-          require("luasnip.loaders.from_vscode").lazy_load()
+          require("luasnip.loaders.from_vscode").lazy_load({
+            exclude = { "plaintex", "tex", "c", "ruby" },
+          })
           require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets" } })
         end,
       },
@@ -85,13 +87,13 @@ return {
       },
     },
   },
-  {
-    "saghen/blink.cmp",
-    opts = function(_, opts)
-      table.insert(opts.sources.default, "luasnip")
-      opts.sources.default = vim.tbl_filter(function(p)
-        return p ~= "snippets"
-      end, opts.sources.default)
-    end,
-  },
+  -- {
+  --   "saghen/blink.cmp",
+  --   opts = function(_, opts)
+  --     table.insert(opts.sources.default, "luasnip")
+  --     opts.sources.default = vim.tbl_filter(function(p)
+  --       return p ~= "snippets"
+  --     end, opts.sources.default)
+  --   end,
+  -- },
 }
