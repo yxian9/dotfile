@@ -18,6 +18,9 @@ return {
             { find = "%d+L, %d+B" },
             { find = "; after #%d+" },
             { find = "; before #%d+" },
+            { find = "written" },
+            { find = "%d fewer lines" },
+            { find = "%d more lines" },
           },
         },
         view = "mini",
@@ -39,6 +42,8 @@ return {
       enabled = true,
       view = "cmdline",
       format = {
+        search_down = { conceal = false, kind = "search", pattern = "^/", icon = "", lang = "regex" },
+        search_up = { conceal = false, kind = "search", pattern = "^%?", icon = "", lang = "regex" },
         cmdline = { pattern = "^:", icon = ">", lang = "vim", conceal = false },
         filter = { conceal = false, title = "bash" },
         lua = { conceal = false },
