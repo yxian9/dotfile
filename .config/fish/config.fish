@@ -1,65 +1,29 @@
-switch (uname)
-    case Darwin ## for macos
-        eval (/opt/homebrew/bin/brew shellenv)
-        fish_add_path -a /opt/homebrew/bin/
-        fish_add_path -a /opt/homebrew/Caskroom/miniforge/base/condabin
-        fish_add_path /opt/homebrew/opt/curl/bin
-        fish_add_path -a ~/.local/bin
-        fish_add_path ~/.config/bin
-        fish_add_path /usr/local/go/bin
-        fish_add_path ~/go/bin
-        abbr bic "brew install --cask"
-        abbr vm "NVIM_APPNAME=nvim_manual_config nvim"
-        abbr l "NVIM_APPNAME=lazy nvim"
-        abbr bin "brew info"
-        abbr binc "brew info --cask"
-        abbr bs "brew search"
-        abbr zcat gzcat
-        set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
-        # >>> conda initialize >>>
-        # !! Contents within this block are managed by 'conda init' !!
-        if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
-            eval /opt/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" hook $argv | source
-        else
-            if test -f "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
-                . "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
-            else
-                fish_add_path -a /opt/homebrew/Caskroom/miniforge/base/bin
-            end
-        end
-        # <<< conda initialize <<< 
-
-    case Linux
-        # >>> conda initialize >>>
-        # !! Contents within this block are managed by 'conda init' !!
-        if test -f ~/miniconda3/bin/conda
-            eval ~/miniconda3/bin/conda "shell.fish" hook $argv | source
-        else
-            if test -f "~/miniconda3/etc/fish/conf.d/conda.fish"
-                . "~/miniconda3/etc/fish/conf.d/conda.fish"
-            else
-                set -x PATH "~/miniconda3/bin" $PATH
-            end
-        end
-        # <<< conda initialize <<<
-
-end
+# Setup brew
+eval (/opt/homebrew/bin/brew shellenv)
+fish_add_path -a /opt/homebrew/bin/ /opt/homebrew/opt/curl/bin
+fish_add_path -a ~/.local/bin ~/.config/bin ~/go/bin
+## conda path
+fish_add_path -a /opt/homebrew/caskroom/miniforge/base/condabin
+abbr bic "brew install --cask"
+abbr vm "NVIM_APPNAME=nvim_manual_config nvim"
+abbr bin "brew info"
+abbr binc "brew info --cask"
+abbr bs "brew search"
+abbr zcat gzcat
+set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
 
 ## cursor
 # set fish_vi_force_cursor
 # set fish_cursor_default block
 
-# Set the insert mode cursor to a line
-set fish_cursor_insert line
-
 # Set the replace mode cursors to an underscore
+set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 set fish_cursor_replace underscore
 
 # The following variable can be used to configure cursor shape in
 # visual mode, but due to fish_cursor_default, is redundant here
 
-# set fish_cursor_visual block
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
@@ -81,38 +45,18 @@ abbr s "kitten ssh"
 abbr lc "nvim leetcode.nvim"
 
 
-# starship init fish | source
 zoxide init --cmd cd fish | source
 
 bind \cr _fzf_search_history
-bind \co _lfcd
 
-bind -M insert \co _lfcd
 bind -M insert \cr _fzf_search_history
 
-set -g fish_escape_delay_ms 30
+# for insert mode: accept autosuggestion
+bind -M insert \cf forward-char
+# for "normal" mode
+bind -M default \cf forward-char
 
-## git promt
-# set -g __fish_git_prompt_show_informative_status 1
-# set -g __fish_git_prompt_hide_untrackedfiles 1
-#
-# set -g __fish_git_prompt_color_branch magenta
-# set -g __fish_git_prompt_showupstream informative
-# set -g __fish_git_prompt_char_upstream_ahead "↑"
-# set -g __fish_git_prompt_char_upstream_behind "↓"
-# set -g __fish_git_prompt_char_upstream_prefix ""
-#
-# set -g __fish_git_prompt_char_stagedstate "●"
-# set -g __fish_git_prompt_char_dirtystate "+"
-# set -g __fish_git_prompt_char_untrackedfiles "…"
-# set -g __fish_git_prompt_char_conflictedstate "✖"
-# set -g __fish_git_prompt_char_cleanstate "✔"
-#
-# set -g __fish_git_prompt_color_dirtystate blue
-# set -g __fish_git_prompt_color_stagedstate yellow
-# set -g __fish_git_prompt_color_invalidstate red
-# set -g __fish_git_prompt_color_untrackedfiles $fish_color_normal
-# set -g __fish_git_prompt_color_cleanstate green
+set -g fish_escape_delay_ms 30
 
 
 ## fzf cd
@@ -190,6 +134,8 @@ function fish_mode_prompt
     end
     set_color normal
 end
+
+## yazi
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"

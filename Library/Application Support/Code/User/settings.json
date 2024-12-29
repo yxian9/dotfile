@@ -129,7 +129,7 @@
   "vim.useCtrlKeys": true,
   "vim.changeWordIncludesWhitespace": false,
   "vim.leader": "<space>",
-  "vim.insertModeKeyBindings": [
+  "vim.insertModeKeyBindingsNonRecursive": [
     {
       "before": ["j", "k"],
       "after": ["<Esc>"]
@@ -143,10 +143,6 @@
   ],
   "vim.normalModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
-    // {
-    //   "before": ["\n"],
-    //   "commands": ["vim.showQuickpickCmdLine"]
-    // },
     // groupEditor or windows movement
     {
       "before": ["<C-u>"], // half page then foues
@@ -302,15 +298,17 @@
       "commands": ["editor.action.quickFix"]
     },
     {
-      "before": ["<leader>", "f"], // visual line and to to last char, jump
+      "before": ["<leader>", "l"], // visual line and to to last char, jump
       "after": ["V", "$", "%"]
     },
+    // rename
     {
-      "before": ["<leader>", "r"],
+      "before": ["<leader>", "c", "r"],
       "commands": ["editor.action.rename"]
     },
+    // code action, open diagnose
     {
-      "before": ["<leader>", "s", "p"],
+      "before": ["<leader>", "x", "x"],
       "commands": [
         {
           "command": "workbench.actions.view.problems",
@@ -328,6 +326,7 @@
         }
       ]
     },
+    // search symbol
     {
       "before": ["<leader>", "s", "s"],
       "commands": [
@@ -340,14 +339,14 @@
     }
   ],
   "vim.operatorPendingModeKeyBindingsNonRecursive": [
-    {
-      "after": ["$"],
-      "before": ["L"]
-    },
-    {
-      "after": ["^"],
-      "before": ["H"]
-    }
+    // {
+    //   "after": ["$"],
+    //   "before": ["L"]
+    // },
+    // {
+    //   "after": ["^"],
+    //   "before": ["H"]
+    // }
   ],
   "vim.searchHighlightColor": "#5f00af",
   "vim.sneak": true,

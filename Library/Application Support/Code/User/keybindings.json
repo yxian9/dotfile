@@ -60,15 +60,15 @@
     "command": "explorer.openToSide",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
   },
-  {
-    "key": "ctrl+shift+i",
-    "command": "editor.action.insertSnippet",
-    "when": "editorTextFocus && editorLangId == 'rmd'",
-    "args": {
-      "snippet": "```{r}\n${TM_SELECTED_TEXT}$0\n```"
-    },
-    "label": "input indicative of r markdown code chunk"
-  },
+  // {
+  //   "key": "ctrl+shift+i",
+  //   "command": "editor.action.insertSnippet",
+  //   "when": "editorTextFocus && editorLangId == 'rmd'",
+  //   "args": {
+  //     "snippet": "```{r}\n${TM_SELECTED_TEXT}$0\n```"
+  //   },
+  //   "label": "input indicative of r markdown code chunk"
+  // },
   {
     "key": "ctrl+shift+i",
     "command": "editor.action.insertSnippet",
@@ -168,6 +168,7 @@
     "key": "shift+cmd+r",
     "command": "workbench.view.remote"
   },
+
   // jupyter note related action
   {
     "key": "ctrl+; v",
@@ -209,12 +210,12 @@
   //   "command": "-workbench.action.quickOpen"
   // },
   {
-    "key": "ctrl+=",
+    "key": "ctrl+i",
     "command": "workbench.action.navigateForward",
     "when": "canNavigateForward"
   },
   {
-    "key": "ctrl+shift+-",
+    "key": "ctrl+o",
     "command": "-workbench.action.navigateForward",
     "when": "canNavigateForward"
   },
@@ -223,16 +224,17 @@
     "command": "whichkey.show",
     "when": "!editorTextFocus  && !inputFocus"
   },
-  {
-    "key": "cmd+l cmd+o",
-    "command": "-extension.liveServer.goOnline",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "cmd+l cmd+c",
-    "command": "-extension.liveServer.goOffline",
-    "when": "editorTextFocus"
-  },
+  // liverserver
+  // {
+  //   "key": "cmd+l cmd+o",
+  //   "command": "-extension.liveServer.goOnline",
+  //   "when": "editorTextFocus"
+  // },
+  // {
+  //   "key": "cmd+l cmd+c",
+  //   "command": "-extension.liveServer.goOffline",
+  //   "when": "editorTextFocus"
+  // },
   {
     "key": "ctrl+d",
     "command": "-deleteRight",
