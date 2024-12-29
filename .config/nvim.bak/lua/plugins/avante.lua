@@ -1,11 +1,7 @@
-if true then
-  return {}
-end
 return {
   "yetone/avante.nvim",
   --event = "VeryLazy",
-  lazy = false,
-  enabled = false,
+  lazy = true,
   build = "make", -- This is Optional, only if you want to use tiktoken_core to calculate tokens count
   opts = {
     -- add any opts here

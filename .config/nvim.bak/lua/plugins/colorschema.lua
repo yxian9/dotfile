@@ -4,18 +4,19 @@ return {
     keys = {
       { "<leader>l", false },
     },
-    -- version = "13.9.0",
+    version = "13.9.0",
     opts = {
-      colorscheme = "gruvbox-material",
-      -- colorscheme = "tokyonight",
+      -- colorscheme = "gruvbox-material",
+      colorscheme = "tokyonight",
       -- colorscheme = "catppuccin",
+      -- colorscheme = "gruvbox-material",
     },
   },
   {
     "sainnhe/gruvbox-material",
     lazy = true,
     enabled = true, -- switch to catppuccin
-    -- priority = 1000,
+    priority = 1000,
     config = function()
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
@@ -39,7 +40,7 @@ return {
   },
   {
     "catppuccin/nvim",
-    enabled = false,
+    enabled = true,
     lazy = true,
     name = "catppuccin",
     -- keys = {
@@ -96,7 +97,7 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    -- lazy = true,
+    lazy = true,
     enabled = true,
     opts = {
       style = "moon",

@@ -1,6 +1,3 @@
-if true then
-  return {}
-end
 return {
   "kawre/leetcode.nvim",
   build = ":TSUpdate html",

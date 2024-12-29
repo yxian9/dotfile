@@ -1,6 +1,3 @@
-if true then
-  return {}
-end
 return {
   "mikavilpas/yazi.nvim",
   event = "VeryLazy",
