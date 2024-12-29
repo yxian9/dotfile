@@ -14,11 +14,7 @@
   "editor.cursorSurroundingLines": 6,
   "editor.cursorSurroundingLinesStyle": "default",
   "editor.detectIndentation": true,
-  // "editor.fontFamily": "VictorMono Nerd Font",
   "editor.fontFamily": "JetBrainsMono Nerd Font Propo",
-  // "editor.fontFamily": "SFMono Nerd Font",
-  // "editor.fontFamily": "Hack Nerd Nerd Font",
-  // "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace ",
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -83,7 +79,7 @@
     "*.config": "groovy"
   },
   "files.exclude": {
-    // "**/node_modules": true
+    "**/node_modules": true
   },
   "search.exclude": {
     "**/node_modules": true,
@@ -179,23 +175,23 @@
     },
     // bookmark
     {
-      "before": ["<leader>", "m"],
+      "before": ["m", "m"],
       "commands": ["bookmarks.toggle"]
     },
     {
-      "before": ["<leader>", "b", "l"],
+      "before": ["<leader>", "m", "l"],
       "commands": ["bookmarks.list"]
     },
     {
-      "before": ["<leader>", "b", "c"],
+      "before": ["<leader>", "m", "c"],
       "commands": ["bookmarks.clear"]
     },
     {
-      "before": ["<leader>", "b", "C"],
+      "before": ["<leader>", "m", "C"],
       "commands": ["bookmarks.clearFromAllFiles"]
     },
     {
-      "before": ["<leader>", "b", "b"],
+      "before": ["<leader>", "m", "b"],
       "commands": ["bookmarks.listFromAllFiles"]
     },
     // 全部折叠
@@ -209,21 +205,25 @@
       "commands": ["editor.unfoldAll"]
     },
     {
-      "before": ["leader", "l", "l"],
+      "before": ["leader", "c", "l"],
       "commands": ["turboConsoleLog.displayLogMessage"]
     },
     {
-      "before": ["leader", "l", "d"],
+      "before": ["leader", "c", "d"],
       "commands": ["turboConsoleLog.commentAllLogMessages"]
     },
     {
-      "before": ["leader", "t"],
+      "before": ["<C-t>"],
       "commands": ["extension.toggleBool"]
     },
     {
       // "0 will always have the content of the latest yank
       "before": ["<leader>", "p"],
       "after": ["\"", "0", "p"]
+    },
+    {
+      "before": ["<leader>", "l"], // visual line and to to last char, jump
+      "after": ["V", "$", "%"]
     },
     {
       "before": ["<C-n>"],
@@ -236,8 +236,9 @@
     },
     {
       "before": ["K"],
-      "commands": ["lineBreakInsert"],
-      "silent": true
+      "after": ["g", "h"]
+      // "commands": ["lineBreakInsert"],
+      // "silent": true
     },
     // fix the u and redo
     {
@@ -250,26 +251,14 @@
       "after": [],
       "commands": ["redo"]
     },
-    // vim easymotion
 
-    // {
-    //   "before": ["g", "e", " "],
-    //   "after": ["leader", "leader", "s"]
-    // },
+    // vim easymotion
     {
-      "before": ["g", "e", "w"],
+      "before": ["s"],
       "after": ["leader", "leader", "w"]
     },
     {
-      "before": ["g", "e", "k"],
-      "after": ["leader", "leader", "k"]
-    },
-    {
-      "before": ["g", "e", "j"],
-      "after": ["leader", "leader", "j"]
-    },
-    {
-      "before": ["g", "e", "b"],
+      "before": ["S"],
       "after": ["leader", "leader", "b"]
     },
     // lsp related staff
@@ -281,27 +270,20 @@
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
     },
-    // {
-    //   "before": ["g", "i"],
-    //   "commands": ["editor.action.goToImplementation"]
-    // },
     {
-      "before": ["g", "p"],
-      "commands": ["workbench.actions.view.problems"]
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
     },
     {
       "before": ["g", "d"],
       "commands": ["editor.action.revealDefinition"]
     },
+    // code action
     {
-      "before": ["g", "q"],
+      "before": ["<leader>", "c", "a"],
       "commands": ["editor.action.quickFix"]
     },
-    {
-      "before": ["<leader>", "l"], // visual line and to to last char, jump
-      "after": ["V", "$", "%"]
-    },
-    // rename
+    // lsp rename
     {
       "before": ["<leader>", "c", "r"],
       "commands": ["editor.action.rename"]
@@ -316,8 +298,19 @@
         }
       ]
     },
+    // search file
     {
-      "before": ["<leader>", "s", "b"],
+      "before": ["<leader>", "f", "f"],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen",
+          "when": ["editorTextFocus"]
+        }
+      ]
+    },
+    // search buffer
+    {
+      "before": ["<leader>", ","],
       "commands": [
         {
           "command": "workbench.action.quickOpen",
@@ -377,12 +370,13 @@
       "after": ["^"],
       "before": ["H"]
     },
+    // treenode sytle expand
     {
-      "before": ["<C-a>"],
+      "before": ["<C-space>"],
       "commands": ["editor.action.smartSelect.expand"]
     },
     {
-      "before": ["<C-d>"],
+      "before": ["<bs>"],
       "commands": ["editor.action.smartSelect.shrink"]
     },
     {
@@ -853,7 +847,6 @@
     // }
   ],
   "workbench.activityBar.location": "top",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.editor.tabSizing": "shrink",
@@ -870,15 +863,6 @@
   "editor.tabCompletion": "on",
   "editor.suggest.localityBonus": true,
   "terminal.integrated.inheritEnv": false,
-  "yaml.schemas": {
-    "file:///Users/yxiang/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  },
-  "atlascode.bitbucket.explorer.enabled": true,
-  "atlascode.bitbucket.explorer.relatedJiraIssues.enabled": false,
-  "atlascode.bitbucket.explorer.refreshInterval": 35,
-  "atlascode.bitbucket.pipelines.explorerEnabled": false,
-  "atlascode.jira.enabled": false,
-  "atlascode.bitbucket.issues.explorerEnabled": false,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -895,5 +879,6 @@
   "excalidraw.theme": "dark",
   "makefile.configureOnOpen": false,
   "editor.accessibilitySupport": "off",
-  "window.confirmBeforeClose": "always"
+  "window.confirmBeforeClose": "always",
+  "workbench.colorTheme": "One Dark Pro Darker"
 }
