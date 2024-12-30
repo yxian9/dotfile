@@ -38,6 +38,7 @@ set -U fish_key_bindings fish_vi_key_bindings
 
 
 abbr v nvim
+abbr da "deno -A"
 abbr g lazygit
 abbr rm "rm -i"
 abbr m spotify_player

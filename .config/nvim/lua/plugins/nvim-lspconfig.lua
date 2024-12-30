@@ -12,6 +12,7 @@ return {
       },
       inlay_hints = { enabled = false },
       servers = {
+
         tailwindcss = {
           mason = false,
           root_dir = function(...)
@@ -20,15 +21,22 @@ return {
             )
           end,
         },
+
         denols = {
+          init_options = {
+            lint = false,
+            unstable = true,
+          },
           mason = false,
           -- filetypes = { "typescript", "typescriptreact" },
           root_dir = require("lspconfig").util.root_pattern("deno.json"),
         },
+
         vtsls = {
           mason = false,
           root_dir = require("lspconfig").util.root_pattern("package.json"),
         },
+
         gopls = {
           mason = false,
           settings = {
