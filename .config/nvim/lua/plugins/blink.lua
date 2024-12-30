@@ -6,6 +6,15 @@ return {
   opts = {
     sources = {
       default = { "luasnip", "lsp", "buffer", "path" },
+      providers = {
+        luasnip = {
+          score_offset = 2,
+        },
+        lsp = {
+          name = "lsp",
+          score_offset = -2,
+        },
+      },
     },
     completion = {
       menu = {
