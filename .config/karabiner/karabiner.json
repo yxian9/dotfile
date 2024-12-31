@@ -877,7 +877,7 @@
                             },
                             "to": [
                                 {
-                                    "apple_vendor_keyboard_key_code": "mission_control"
+                                    "key_code": "f3"
                                 }
                             ]
                         },
@@ -1650,7 +1650,18 @@
                 "delay_milliseconds_before_open_device": 1000
             },
             "selected": true,
-            "simple_modifications": [],
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "left_control"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_command"
+                        }
+                    ]
+                }
+            ],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "indicate_sticky_modifier_keys_state": true,
