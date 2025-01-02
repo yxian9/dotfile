@@ -1,8 +1,8 @@
 return {
   "saghen/blink.cmp",
-  dependencies = {
-    "L3MON4D3/LuaSnip",
-  },
+  -- dependencies = {
+  --   "L3MON4D3/LuaSnip",
+  -- },
   opts = {
     sources = {
       default = { "luasnip", "lsp", "buffer", "path" },
@@ -23,6 +23,7 @@ return {
         draw = {
           columns = {
             { "label", "label_description", gap = 1 },
+            -- { "kind_icon", "kind", "source_name" }, -- add source name
             { "kind_icon", "kind" },
           },
         },

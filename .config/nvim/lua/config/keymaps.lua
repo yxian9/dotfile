@@ -47,3 +47,14 @@ end, { desc = "Format" })
 --   "<cmd>TmuxNavigatePrevious<cr><esc>",
 --   { desc = "Move cursor to previous pane" }
 -- )
+--
+-- turn on very magic vim regex.
+vim.keymap.set("c", "s", function()
+  local cmd = vim.fn.getcmdline()
+  if cmd == "" or cmd == "'<,'>" then
+    return "s/\\v"
+  end
+  return "s"
+end, { expr = true })
+vim.keymap.set("n", "/", "/\\v", { noremap = true })
+vim.keymap.set("n", "?", "?\\v", { noremap = true })

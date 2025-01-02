@@ -70,11 +70,11 @@ cmd-alt-shift-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 # alternative window
-cmd-alt-shift-3 = 'workspace-back-and-forth'
+cmd-alt-shift-6 = 'workspace-back-and-forth'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 ## swap between monitor
-cmd-alt-shift-6 = 'move-workspace-to-monitor --wrap-around next'
+cmd-alt-shift-0 = 'move-workspace-to-monitor --wrap-around next'
 # All possible keys:
 # - Letters.        a, b, c, ..., z
 # - Numbers.        0, 1, 2, ..., 9
@@ -100,14 +100,15 @@ alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-cmd-shift-h = 'focus left'
-cmd-shift-l = 'focus right'
+cmd-alt-shift-1 = 'focus left'
+cmd-alt-shift-2 = 'focus right'
+## save all cmd-shift for vscode and cursor app
 # cmd-shift-j = 'focus down'
 # cmd-shift-k = 'focus up'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-cmd-alt-shift-1 = 'move left'
-cmd-alt-shift-2 = 'move right'
+cmd-alt-shift-3 = 'move left'
+cmd-alt-shift-4 = 'move right'
 # cmd-alt-shift-3 = 'move down'
 # cmd-alt-shift-4 = 'move up'
 
@@ -133,11 +134,11 @@ alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
 alt-7 = 'workspace 📘'
-alt-8 = 'workspace 🎵'
+alt-8 = 'workspace 🎵' # 8 for music
 alt-9 = 'workspace 9'
 alt-b = 'workspace 🌎' # for Browser
 alt-e = 'workspace 🙈' # for File Explorer (Finder)
-alt-m = 'workspace 🤖' # for Music
+alt-m = 'workspace 🤖' # for slace message
 alt-t = 'workspace 🎮' # for Terminal
 alt-c = 'workspace 👾' # for code
 alt-v = 'workspace v' # for code
