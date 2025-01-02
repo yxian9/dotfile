@@ -1,6 +1,7 @@
 return {
   "akinsho/git-conflict.nvim",
   lazy = true,
+  enabled = false,
   opts = {
     default_mappings = {
       ours = "<leader>ho",
@@ -10,10 +11,10 @@ return {
       next = "]x",
       prev = "[x",
     },
-    highlights = { -- They must have background color, otherwise the default color will be used
-      current = "DiffDelete",
-      incoming = "DiffChange",
-    },
+    -- highlights = { -- They must have background color, otherwise the default color will be used
+    --   current = "DiffDelete",
+    --   incoming = "DiffChange",
+    -- },
   },
   keys = {
     {
