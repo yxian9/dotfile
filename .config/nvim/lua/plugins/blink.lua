@@ -1,7 +1,7 @@
 return {
   "saghen/blink.cmp",
   -- dependencies = {
-  --   "L3MON4D3/LuaSnip",
+  --   "l3mon4d3/luasnip",
   -- },
   opts = {
     sources = {

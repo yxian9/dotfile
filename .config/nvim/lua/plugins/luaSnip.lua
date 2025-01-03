@@ -68,7 +68,7 @@ return {
   -- blink.cmp integration
   {
     "saghen/blink.cmp",
-    optional = true,
+    -- optional = true,
     opts = {
       -- sources = { default = { "luasnip" } },
       snippets = {
@@ -87,13 +87,13 @@ return {
       },
     },
   },
-  {
-    "saghen/blink.cmp",
-    opts = function(_, opts)
-      table.insert(opts.sources.default, "luasnip")
-      opts.sources.default = vim.tbl_filter(function(p)
-        return p ~= "snippets"
-      end, opts.sources.default)
-    end,
-  },
+  -- {
+  --   "saghen/blink.cmp",
+  --   opts = function(_, opts)
+  --     table.insert(opts.sources.default, "luasnip")
+  --     opts.sources.default = vim.tbl_filter(function(p)
+  --       return p ~= "snippets"
+  --     end, opts.sources.default)
+  --   end,
+  -- },
 }
