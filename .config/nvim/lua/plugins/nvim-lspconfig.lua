@@ -23,22 +23,31 @@ return {
         },
 
         denols = {
+          on_attach = function(client, _)
+            client.server_capabilities.semanticTokensProvider = false
+          end,
+          mason = false,
           init_options = {
             lint = false,
             unstable = true,
           },
-          mason = false,
           -- filetypes = { "typescript", "typescriptreact" },
           root_dir = require("lspconfig").util.root_pattern("deno.json"),
         },
 
         vtsls = {
           mason = false,
+          on_attach = function(client, _)
+            client.server_capabilities.semanticTokensProvider = false
+          end,
           root_dir = require("lspconfig").util.root_pattern("package.json"),
         },
 
         gopls = {
           mason = false,
+          on_attach = function(client, _)
+            client.server_capabilities.semanticTokensProvider = false
+          end,
           settings = {
             gopls = {
               analyses = {

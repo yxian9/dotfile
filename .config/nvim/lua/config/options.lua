@@ -21,6 +21,8 @@ opt.cursorline = true
 opt.cursorlineopt = "number"
 opt.showcmd = false
 opt.showmode = true
+opt.virtualedit = "block"
+opt.inccommand = "split"
 -- vim.cmd([[highlight LineNr guifg=]])
 -- vim.cmd("hi LineNr guifg=")
 -- https://github.com/LazyVim/LazyVim/issues/556
