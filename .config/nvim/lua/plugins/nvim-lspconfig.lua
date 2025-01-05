@@ -70,3 +70,5 @@ return {
     end,
   },
 }
+-- https://github.com/LazyVim/LazyVim/discussions/2397
+-- disable semanticTokensProvider
