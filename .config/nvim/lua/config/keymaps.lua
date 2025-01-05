@@ -68,7 +68,12 @@ vim.keymap.set("n", "?", "?\\v", { noremap = true })
 --   end
 --   vim.keymap.set(mode, lhs_to, rhs, { desc = keymap.desc })
 -- end
--- remap("n", "gx", "<Leader>gx")
--- remap("x", "gx", "<Leader>gx")
--- vim.keymap.set("n", "gxl", "gx", { remap = true })
--- vim.keymap.set("n", "gx", "<nop>", { noremap = true })
+
+-- https://github.dev/echasnovski/nvim/tree/a3916554cb3cada94b7c4a1f7a1c4d6ab4e8b558
+local nmap_leader = function(suffix, rhs, desc, opts)
+  opts = opts or {}
+  opts.desc = desc
+  vim.keymap.set("n", "<Leader>" .. suffix, rhs, opts)
+end
+nmap_leader("oh", "<Cmd>normal gxiagxila<CR>", "Move arg left")
+nmap_leader("ol", "<Cmd>normal gxiagxina<CR>", "Move arg right")
