@@ -1,8 +1,9 @@
 return {
   "saghen/blink.cmp",
   opts = {
+    snippets = { preset = "luasnip" },
     sources = {
-      default = { "luasnip", "lsp", "buffer", "path" },
+      default = { "snippets", "lsp", "buffer", "path" },
       -- providers = {
       --   luasnip = {
       --     score_offset = 2,
