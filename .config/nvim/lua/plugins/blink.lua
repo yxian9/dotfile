@@ -1,8 +1,5 @@
 return {
   "saghen/blink.cmp",
-  -- dependencies = {
-  --   "l3mon4d3/luasnip",
-  -- },
   opts = {
     sources = {
       default = { "luasnip", "lsp", "buffer", "path" },

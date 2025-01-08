@@ -58,6 +58,7 @@ vim.keymap.set("c", "s", function()
 end, { expr = true })
 vim.keymap.set("n", "/", "/\\v", { noremap = true })
 vim.keymap.set("n", "?", "?\\v", { noremap = true })
+vim.keymap.set("i", "<c-o>", "<ESC>o", { noremap = true })
 
 -- https://github.com/echasnovski/mini.nvim/discussions/1009
 -- local remap = function(mode, lhs_from, lhs_to)

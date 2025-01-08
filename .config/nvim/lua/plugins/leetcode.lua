@@ -39,7 +39,7 @@ return {
         },
       },
       ["typescript"] = {
-        before = { [[import { TreeNode} from "./type" ]] },
+        before = { [[import { TreeNode} from "./type.ts" ]] },
       },
       ["golang"] = {
         before = {
