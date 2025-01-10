@@ -1,18 +1,28 @@
 return {
   "saghen/blink.cmp",
+  dependencies = {
+    "moyiz/blink-emoji.nvim",
+  },
   opts = {
     snippets = { preset = "luasnip" },
+    fuzzy = {
+      use_typo_resistance = false,
+      -- use_frecency = false,
+      sorts = { "sort_text", "score" },
+    },
     sources = {
-      default = { "snippets", "lsp", "buffer", "path" },
-      -- providers = {
-      --   luasnip = {
-      --     score_offset = 2,
-      --   },
-      --   lsp = {
-      --     name = "lsp",
-      --     score_offset = -2,
-      --   },
-      -- },
+      default = { "snippets", "buffer", "lsp", "path", "emoji" },
+      providers = {
+        -- snippets = {
+        --   score_offset = 20,
+        -- },
+        emoji = {
+          module = "blink-emoji",
+          name = "Emoji",
+          -- score_offset = 1, -- Tune by preference
+          opts = { insert = true }, -- Insert emoji (default) or complete its name
+        },
+      },
     },
     completion = {
       menu = {
