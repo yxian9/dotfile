@@ -52,6 +52,8 @@ brew install miniforge
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 fisher install PatrickF1/fzf.fish
 
+# ignore some local setting files
+# git update-index --skip-worktree file
 ```
 macOS setting:
 
@@ -61,4 +63,5 @@ turn on
 
 turn off
 - "Displays have separate Spaces"
+
 
