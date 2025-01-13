@@ -163,3 +163,4 @@ else
     end
 end
 # <<< conda initialize <<<
+uv generate-shell-completion fish | source
