@@ -9,6 +9,15 @@ return {
       command_palette = false,
     },
     routes = {
+      --https://github.com/neovim/nvim-lspconfig/issues/1931
+      --filter when more then two lsp working at same time
+      {
+        filter = {
+          event = "notify",
+          find = "No information available",
+        },
+        opts = { skip = true },
+      },
       {
         filter = {
           event = "msg_show",
