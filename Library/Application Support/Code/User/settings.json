@@ -880,6 +880,6 @@
   "makefile.configureOnOpen": false,
   "editor.accessibilitySupport": "off",
   "window.confirmBeforeClose": "always",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Quiet Light",
   "settingsSync.ignoredExtensions": []
 }
