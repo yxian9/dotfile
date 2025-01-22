@@ -56,4 +56,4 @@ end
 -- Create a floating window with default dimensions
 vim.api.nvim_create_user_command("Floaterminal", toggle_terminal, {})
 vim.keymap.set({ "n" }, "<leader>tt", toggle_terminal, { desc = "toggle float terminal" })
-vim.cmd("hi link AvanteConflictCurrent DiffText")
+-- vim.cmd("hi link AvanteConflictCurrent DiffText")

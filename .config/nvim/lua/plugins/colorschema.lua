@@ -6,15 +6,15 @@ return {
     },
     -- version = "13.9.0",
     opts = {
-      colorscheme = "gruvbox-material",
-      -- colorscheme = "tokyonight",
+      -- colorscheme = "gruvbox-material",
+      colorscheme = "tokyonight",
       -- colorscheme = "catppuccin",
     },
   },
   {
     "sainnhe/gruvbox-material",
     lazy = true,
-    enabled = true, -- switch to catppuccin
+    enabled = false, -- switch to catppuccin
     -- priority = 1000,
     config = function()
       -- Optionally configure and load the colorscheme
@@ -55,7 +55,7 @@ return {
           WinSeparator = { fg = colors.surface2 }, -- Set the border color
         }
       end,
-      flavour = "macchiato",
+      flavour = "Latte",
       integrations = {
         aerial = true,
         alpha = true,
@@ -99,9 +99,10 @@ return {
     -- lazy = true,
     enabled = true,
     opts = {
-      style = "moon",
+      style = "day",
       on_colors = function(colors)
-        colors.border = "#64748b"
+        -- colors.border = "#64748b"
+        colors.border = "#82aaff"
       end,
     },
   },
