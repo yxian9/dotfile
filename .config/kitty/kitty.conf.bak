@@ -15,6 +15,7 @@ sync_to_monitor no
 # but it didn't change, so I went with this, it works fine
 modify_font cell_width 102%
 modify_font cell_height 105%
+macos_thicken_font 0.2
 # modify_font cell_height 3px
 # modify_font baseline 1
 # modify_font underline_position -2
@@ -27,7 +28,7 @@ cursor_stop_blinking_after 1
 cursor_trail 1
 # repaint_delay 10
 #cursor_trail_decay 0.1 0.4
-cursor_trail_start_threshold 50
+cursor_trail_start_threshold 60
 mouse_hide_wait 3.0
 focus_follows_mouse no
 
@@ -102,13 +103,17 @@ inactive_tab_font_style normal
 
 copy_on_select yes
 enabled_layouts splits:split_axis=horizontal
-map f6 launch --location=vsplit
+# map f6 launch --location=vsplit
 map f5 launch --location=hsplit
 map ctrl+left neighboring_window left
 map ctrl+right neighboring_window right
 map ctrl+up neighboring_window up
 map ctrl+down neighboring_window down
-map cmd+s show_scrollback
+map shift+cmd+s show_scrollback
+# map f6 goto_layout stack if current_layout() != 'stack' else last_layout
+# map shift+cmd+z goto_layout stack
+# map `>a goto_layout tall
+map shift+cmd+z kitten zoom_toggle.py
 
 # BEGIN_KITTY_THEME
 # Tokyo Night Moon
@@ -117,8 +122,8 @@ include current-theme.conf
 
 
 # BEGIN_KITTY_FONTS
-font_family      family="VictorMono Nerd Font Mono"
-bold_font        auto
+font_family      family='VictorMono Nerd Font Mono' style=SemiBold
+bold_font        family='VictorMono Nerd Font Mono' style=Bold
 italic_font      auto
 bold_italic_font auto
 # END_KITTY_FONTS
