@@ -48,11 +48,11 @@ return {
         separator = "",
         padding = { left = 1, right = 0 },
       },
-      -- {
-      --   "navic",
-      --   -- color_correction = "dynamic",
-      --   padding = { right = 0 },
-      -- },
+      {
+        "navic",
+        color_correction = "dynamic",
+        padding = { right = 0 },
+      },
     }
     -- https://github.com/LazyVim/LazyVim/pull/4231
     -- table.insert(opts.sections.lualine_c, { "navic", color_correction = "dynamic" })
