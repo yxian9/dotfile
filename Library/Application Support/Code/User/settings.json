@@ -881,5 +881,6 @@
   "editor.accessibilitySupport": "off",
   "window.confirmBeforeClose": "always",
   "workbench.colorTheme": "Quiet Light",
-  "settingsSync.ignoredExtensions": []
+  "settingsSync.ignoredExtensions": [],
+  "vsicons.dontShowNewVersionMessage": true
 }
