@@ -13,6 +13,14 @@ return {
       inlay_hints = { enabled = false },
       servers = {
 
+        -- python
+        pyright = {
+          mason = false,
+        },
+        ruff = {
+          mason = false,
+        },
+
         tailwindcss = {
           mason = false,
           root_dir = function(...)

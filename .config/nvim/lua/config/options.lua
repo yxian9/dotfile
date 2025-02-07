@@ -9,8 +9,6 @@ vim.g.lazyvim_picker = "fzf"
 -- vim.g.lazyvim_python_lsp = "basedpyright"
 -- vim.opt.formatoptions = vim.opt.formatoptions - "o"
 
-vim.opt.formatoptions = vim.opt.formatoptions - "o"
-
 local opt = vim.opt
 opt.pumblend = 0
 opt.winblend = 0

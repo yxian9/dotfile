@@ -17,3 +17,15 @@
 --     client.server_capabilities.semanticTokensProvider = nil
 --   end,
 -- })
+-- https://github.com/LazyVim/LazyVim/discussions/431
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+augroup("mygroup", { clear = true })
+autocmd("Filetype", {
+  pattern = { "*" },
+  callback = function()
+    vim.opt.formatoptions = vim.opt.formatoptions - "o" -- Don't continue comments with o and O
+  end,
+  group = "mygroup",
+  desc = "Don't continue comments with o and O",
+})

@@ -12,11 +12,17 @@ return {
       sorts = { "sort_text", "score" },
     },
     sources = {
-      default = { "snippets", "buffer", "lsp", "path", "emoji" },
+      default = { "snippets", "buffer", "lsp", "path", "neopyter", "emoji" },
       providers = {
         -- snippets = {
         --   score_offset = 20,
         -- },
+        neopyter = {
+          name = "Neopyter",
+          module = "neopyter.blink",
+          ---@type neopyter.CompleterOption
+          opts = {},
+        },
         emoji = {
           module = "blink-emoji",
           name = "Emoji",
@@ -32,8 +38,8 @@ return {
         draw = {
           columns = {
             { "label", "label_description", gap = 1 },
-            -- { "kind_icon", "kind", "source_name" }, -- add source name
-            { "kind_icon", "kind" },
+            { "kind_icon", "kind", "source_name" }, -- add source name
+            -- { "kind_icon", "kind" },
           },
         },
       },
