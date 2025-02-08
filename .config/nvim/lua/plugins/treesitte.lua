@@ -1,6 +1,3 @@
-if true then
-  return {}
-end
 return {
 
   {
@@ -19,7 +16,6 @@ return {
         "regex",
         "tsx",
         "typescript",
-        "vim",
         "yaml",
       },
     },

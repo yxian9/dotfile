@@ -5,9 +5,11 @@
 --terminal
 -- vim.keymap.del("t", "<esc><esc>")
 -- vim.keymap.set("t", "<esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+
 local key = vim.keymap
 key.del("n", "<c-/>")
 
+key.set({ "i", "x", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 key.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
 key.set("i", "<C-a>", "<C-r>0", { noremap = true, silent = true })
 key.set("i", "<C-j>", "<Nop>", { noremap = true, silent = true })
@@ -58,7 +60,7 @@ vim.keymap.set("c", "s", function()
 end, { expr = true })
 vim.keymap.set("n", "/", "/\\v", { noremap = true })
 vim.keymap.set("n", "?", "?\\v", { noremap = true })
-vim.keymap.set("i", "<c-o>", "<ESC>o", { noremap = true })
+vim.keymap.set("i", "<c-o>", "<ecs>o", { noremap = true })
 
 -- https://github.com/echasnovski/mini.nvim/discussions/1009
 -- local remap = function(mode, lhs_from, lhs_to)

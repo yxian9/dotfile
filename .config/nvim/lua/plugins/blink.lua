@@ -12,17 +12,11 @@ return {
       sorts = { "sort_text", "score" },
     },
     sources = {
-      default = { "snippets", "buffer", "lsp", "path", "neopyter", "emoji" },
+      default = { "snippets", "buffer", "lsp", "path", "emoji" },
       providers = {
         -- snippets = {
         --   score_offset = 20,
         -- },
-        neopyter = {
-          name = "Neopyter",
-          module = "neopyter.blink",
-          ---@type neopyter.CompleterOption
-          opts = {},
-        },
         emoji = {
           module = "blink-emoji",
           name = "Emoji",
