@@ -10,6 +10,7 @@ local key = vim.keymap
 key.del("n", "<c-/>")
 
 key.set({ "i", "x", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+key.set({ "i", "n" }, "<M-i>", "<esc>o# %%<esc>o", { desc = "insert cell" })
 key.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
 key.set("i", "<C-a>", "<C-r>0", { noremap = true, silent = true })
 key.set("i", "<C-j>", "<Nop>", { noremap = true, silent = true })

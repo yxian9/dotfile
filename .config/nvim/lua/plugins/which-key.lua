@@ -2,7 +2,7 @@
 return {
   "folke/which-key.nvim",
   opts = {
-    preset = "classic",
+    preset = "helix",
     -- icons = {
     --   rules = {
     --     { plugin = "copilot.lua", icon = " ", color = "orange" },

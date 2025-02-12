@@ -9,8 +9,20 @@ return {
       },
     },
     indent = {
+      -- priority = 1,
       enabled = true,
-      char = "┋",
+      indent = {
+        only_current = true,
+        char = "┋",
+        only_scope = false,
+      },
+      scope = {
+        -- char = "|",
+        -- char = "┋",
+      },
+    },
+    chunk = {
+      enabled = false,
     },
     dashboard = {
       enabled = true,

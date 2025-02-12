@@ -27,14 +27,14 @@ return {
     arg = "leetcode.nvim",
     lang = "golang",
     cn = { -- leetcode.cn
-      enabled = true, ---@type boolean
+      enabled = false, ---@type boolean
       translator = false, ---@type boolean
       translate_problems = false, ---@type boolean
     },
     injector = {
       ["python3"] = {
         before = {
-          "from typing import Optional, List",
+          "from typing import List",
           "from type import TreeNode",
         },
       },
