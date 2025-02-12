@@ -173,6 +173,15 @@
       "before": ["C-]"],
       "commands": ["jupyter.gotoNextCellInFile"]
     },
+    {
+      "before": ["<leader>", "c", "C"],
+      "commands": ["jupyter.selectCell"]
+    },
+    {
+      "before": ["<leader>", "c", "c"],
+      "commands": ["jupyter.selectCellContents"]
+    },
+
     // bookmark
     {
       "before": ["m", "m"],
@@ -341,7 +350,7 @@
     //   "before": ["H"]
     // }
   ],
-  "vim.searchHighlightColor": "#5f00af",
+  // "vim.searchHighlightColor": "#5f00af",
   "vim.sneak": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.timeout": 4000,
@@ -879,8 +888,12 @@
   "excalidraw.theme": "dark",
   "makefile.configureOnOpen": false,
   "editor.accessibilitySupport": "off",
-  "window.confirmBeforeClose": "always",
-  "workbench.colorTheme": "Quiet Light",
+  "workbench.colorTheme": "Solarized Light",
   "settingsSync.ignoredExtensions": [],
-  "vsicons.dontShowNewVersionMessage": true
+  "vsicons.dontShowNewVersionMessage": true,
+  "jupyter.interactiveWindow.codeLens.commands": "",
+  "jupyter.interactiveWindow.codeLens.enable": false,
+  "jupyter.interactiveWindow.cellMarker.decorateCells": "allCells",
+  "window.restoreWindows": "none",
+  "terminal.integrated.gpuAcceleration": "off"
 }
