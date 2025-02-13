@@ -888,7 +888,7 @@
   "excalidraw.theme": "dark",
   "makefile.configureOnOpen": false,
   "editor.accessibilitySupport": "off",
-  "workbench.colorTheme": "Solarized Light",
+  "workbench.colorTheme": "Quiet Light",
   "settingsSync.ignoredExtensions": [],
   "vsicons.dontShowNewVersionMessage": true,
   "jupyter.interactiveWindow.codeLens.commands": "",

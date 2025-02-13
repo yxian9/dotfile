@@ -58,8 +58,11 @@ return {
           end,
           settings = {
             gopls = {
+              staticcheck = true,
+              semanticTokens = false,
               analyses = {
                 fieldalignment = false,
+                ST1006 = false, -- method received use self or this
               },
             },
           },
