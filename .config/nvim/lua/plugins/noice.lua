@@ -7,6 +7,7 @@ return {
     -- https://github.com/folke/noice.nvim/issues/846 set command_palette to false.
     presets = {
       command_palette = false,
+      lsp_doc_border = true,
     },
     routes = {
       --https://github.com/neovim/nvim-lspconfig/issues/1931

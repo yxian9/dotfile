@@ -35,7 +35,7 @@ return {
       ["python3"] = {
         before = {
           "from typing import List",
-          "from type import TreeNode",
+          "from typing import Optional",
         },
       },
       ["typescript"] = {
