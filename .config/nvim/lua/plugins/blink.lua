@@ -8,7 +8,7 @@ return {
     fuzzy = {
       -- use_typo_resistance = false,
       -- use_frecency = false,
-      sorts = { "sort_text", "score" },
+      -- sorts = { "sort_text", "score" },
     },
     -- sources = {
     --   default = { "snippets", "buffer", "lsp", "path", "emoji" },

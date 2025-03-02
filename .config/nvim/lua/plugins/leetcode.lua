@@ -25,7 +25,7 @@ return {
   },
   opts = {
     arg = "leetcode.nvim",
-    lang = "golang",
+    lang = "python3",
     cn = { -- leetcode.cn
       enabled = false, ---@type boolean
       translator = false, ---@type boolean
