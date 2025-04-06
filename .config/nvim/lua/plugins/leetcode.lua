@@ -34,8 +34,8 @@ return {
     injector = {
       ["python3"] = {
         before = {
-          "from typing import List",
-          "from typing import Optional",
+          "from typing import List,Optional",
+          "from collections import defaultdict",
         },
       },
       ["typescript"] = {

@@ -4,6 +4,7 @@
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_eslint_auto_format = false
 vim.highlight.priorities.semantic_tokens = 95
+vim.g.snacks_animate = false
 
 local opt = vim.opt
 opt.inccommand = "split"
