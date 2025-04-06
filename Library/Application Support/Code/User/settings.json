@@ -104,20 +104,16 @@
   "notebook.formatOnSave.enabled": true,
   "notebook.lineNumbers": "on",
   "notebook.output.textLineLimit": 10,
-  "quarto.render.previewReveal": false,
-  "quarto.render.previewType": "none",
-  "quarto.render.renderOnSaveShiny": false,
-  "quarto.usePipQuarto": false,
-  "quarto.visualEditor.spelling": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "svelte.enable-ts-plugin": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.US",
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
   "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
   "vim.easymotion": true,
+  "vim.easymotionKeys": "asdghklqwertyuiopzxcvbnmfj",
   "vim.foldfix": true,
+  "vim.surround": true,
   "vim.highlightedyank.color": "#a9dc7660",
   "vim.highlightedyank.duration": 250,
   "vim.highlightedyank.enable": true,
@@ -149,10 +145,12 @@
       "after": ["L", "z", "z"]
     },
     {
-      "before": ["C-h"], // windowns move
+      // Go to left window
+      "before": ["C-h"],
       "after": ["C-w", "h"]
     },
     {
+      // Go to lower window
       "before": ["C-j"],
       "after": ["C-w", "j"]
     },
@@ -163,6 +161,22 @@
     {
       "before": ["C-l"],
       "after": ["C-w", "l"]
+    },
+
+    {
+      // Prev buffer
+      "before": ["<S-h>"],
+      "commands": [":bprev"]
+    },
+    {
+      // Next buffer
+      "before": ["<S-l>"],
+      "commands": [":bnext"]
+    },
+    {
+      // Toggle Word Wrap
+      "before": ["<leader>", "u", "w"],
+      "commands": ["editor.action.toggleWordWrap"]
     },
     // jupyter
     {
@@ -212,14 +226,6 @@
     {
       "before": ["<leader>", "z", "o"],
       "commands": ["editor.unfoldAll"]
-    },
-    {
-      "before": ["leader", "c", "l"],
-      "commands": ["turboConsoleLog.displayLogMessage"]
-    },
-    {
-      "before": ["leader", "c", "d"],
-      "commands": ["turboConsoleLog.commentAllLogMessages"]
     },
     {
       "before": ["<C-t>"],
@@ -276,6 +282,11 @@
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
     {
+      // Hover
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
     },
@@ -295,7 +306,19 @@
     // lsp rename
     {
       "before": ["<leader>", "c", "r"],
-      "commands": ["editor.action.rename"]
+      "commands": ["editor.action.rename"],
+      "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      // Line Diagnostics
+      "before": ["<leader>", "c", "d"],
+      "commands": ["editor.action.showHover"],
+      "when": "workbench.panel.output.active"
+    },
+    {
+      // LSP info
+      "before": ["<leader>", "c", "l"],
+      "commands": ["workbench.action.output.toggleOutput"]
     },
     // code action, open diagnose
     {
@@ -306,6 +329,18 @@
           "when": ["editorTextFocus"]
         }
       ]
+    },
+    {
+      // Next Diagnostic
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"],
+      "when": "editorFocus"
+    },
+    {
+      // Prev Diagnostic
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"],
+      "when": "editorFocus"
     },
     // search file
     {
@@ -895,5 +930,6 @@
   "jupyter.interactiveWindow.codeLens.enable": false,
   "jupyter.interactiveWindow.cellMarker.decorateCells": "allCells",
   "window.restoreWindows": "none",
-  "terminal.integrated.gpuAcceleration": "off"
+  "terminal.integrated.gpuAcceleration": "off",
+  "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniforge/base/envs/sing"
 }

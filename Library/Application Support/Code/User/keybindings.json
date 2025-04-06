@@ -1,5 +1,13 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction"
+  },
   // refresh browser
   {
     "key": "shift+r",
@@ -139,10 +147,10 @@
     "command": "-workbench.action.chat.open",
     "when": "hasChatProvider"
   },
+
   {
     "key": "shift+cmd+i",
-    "command": "-workbench.action.quickchat.toggle",
-    "when": "hasChatProvider"
+    "command": "-workbench.action.quickchat.toggle"
   },
   {
     "key": "shift+enter",
@@ -351,6 +359,11 @@
     "key": "cmd+enter",
     "command": "-notebook.cell.chat.acceptChanges",
     "when": "notebookEditorFocused && !inputFocus && !notebookCellEditorFocused && notebookChatOuterFocusPosition == 'below'"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-workbench.action.chat.openEditSession",
+    "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
   }
   // {
   //   "key": "shift+;",
