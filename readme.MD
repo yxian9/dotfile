@@ -75,4 +75,9 @@ turn on
 turn off
 - "Displays have separate Spaces"
 
+```
+go install golang.org/x/tools/gopls@latest
+uv python install 3.12
+uv tool install ruff pyright
 
+```
