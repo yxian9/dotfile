@@ -25,26 +25,21 @@ $ cd dotfile
 then use GNU stow to create symlinks
 
 ```
-$ stow .
+$ stow -t ~/ .
 ```
 
 brew install
 ```
-brew install wget \
+brew install wget fd fzf uv jq \
               jesseduffield/lazygit/lazygit \
               git-delta \
               zoxide \
-              fzf \
-              yazi\
+              yazi \
               fish \
-              bat \
-              ripgrep \
+              bat ripgrep \
               neovim \
-              tmux \
-              stow \
-              jq \
-              uv \
-              deno
+              tmux stow \
+              deno node
 node  
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask font-victor-mono-nerd-font
