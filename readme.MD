@@ -40,11 +40,11 @@ brew install wget fd fzf uv jq \
               neovim \
               tmux stow \
               deno node
-node  
+
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask font-victor-mono-nerd-font
 brew install --cask kitty
-brew install --cask logi-options+
+brew install --cask logi-options+ #for K860 keyboard
 
 ## addition application
 brew install --cask google-chrome
@@ -53,10 +53,10 @@ brew install --cask pdfsam-basic # merge pdf files
 brew install --cask iina
 brew install --cask cyberduck
 brew install --cask visual-studio-code
+brew install --cask spotify
 brew install --cask slack
 brew install --cask temurin ## JDK https://adoptium.net/ 
 # brew install --cask font-jetbrains-mono-nerd-font
-#  python environment
 brew install --cask karabiner-elements
 
 ## fisher setup
@@ -75,6 +75,7 @@ turn on
 turn off
 - "Displays have separate Spaces"
 
+lsp related stuff
 ```
 go install golang.org/x/tools/gopls@latest
 uv python install 3.12
