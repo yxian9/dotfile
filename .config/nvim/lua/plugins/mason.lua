@@ -1,5 +1,4 @@
 return {
-  "williamboman/mason.nvim",
-  -- enabled = false,
-  lazy = true,
+  { "mason-org/mason.nvim", version = "^1.0.0" },
+  { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
 }

@@ -103,7 +103,6 @@
   "notebook.formatOnCellExecution": true,
   "notebook.formatOnSave.enabled": true,
   "notebook.lineNumbers": "on",
-  "notebook.output.textLineLimit": 10,
   "security.workspace.trust.untrustedFiles": "open",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.US",
@@ -911,8 +910,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "interactiveWindow.collapseCellInputCode": "never",
-  "jupyter.interactiveWindow.textEditor.autoMoveToNextCell": false,
-  "jupyter.interactiveWindow.textEditor.cellFolding": false,
   "liveServer.settings.donotShowInfoMsg": true,
   "files.refactoring.autoSave": false,
   "files.autoSave": "onFocusChange",
@@ -926,10 +923,13 @@
   "workbench.colorTheme": "Quiet Light",
   "settingsSync.ignoredExtensions": [],
   "vsicons.dontShowNewVersionMessage": true,
+  "jupyter.interactiveWindow.textEditor.autoMoveToNextCell": false,
+  "jupyter.interactiveWindow.textEditor.cellFolding": false,
   "jupyter.interactiveWindow.codeLens.commands": "",
   "jupyter.interactiveWindow.codeLens.enable": false,
   "jupyter.interactiveWindow.cellMarker.decorateCells": "allCells",
   "window.restoreWindows": "none",
   "terminal.integrated.gpuAcceleration": "off",
-  "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniforge/base/envs/sing"
+  // "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniforge/base/envs/sing",
+  "notebook.outline.showCodeCells": true
 }
