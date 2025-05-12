@@ -30,10 +30,26 @@ $ stow .
 
 brew install
 ```
-brew install wget lazygit git-delta zoxide fzf yazi fish bat ripgrep neovim tmux stow jq node  
+brew install wget \
+              jesseduffield/lazygit/lazygit \
+              git-delta \
+              zoxide \
+              fzf \
+              yazi\
+              fish \
+              bat \
+              ripgrep \
+              neovim \
+              tmux \
+              stow \
+              jq \
+              uv \
+              deno
+node  
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask font-victor-mono-nerd-font
 brew install --cask kitty
+brew install --cask logi-options+
 
 ## addition application
 brew install --cask google-chrome
@@ -46,7 +62,7 @@ brew install --cask slack
 brew install --cask temurin ## JDK https://adoptium.net/ 
 # brew install --cask font-jetbrains-mono-nerd-font
 #  python environment
-brew install miniforge
+brew install --cask karabiner-elements
 
 ## fisher setup
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
