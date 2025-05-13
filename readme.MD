@@ -43,10 +43,14 @@ brew install wget fd fzf uv jq \
 
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask font-victor-mono-nerd-font
+# brew install --cask font-jetbrains-mono-nerd-font
 brew install --cask kitty
-brew install --cask logi-options+ #for K860 keyboard
+
+
 
 ## addition application
+brew install --cask logi-options+ #for K860 keyboard
+brew install --cask time-out
 brew install --cask google-chrome
 brew install --cask bitwarden
 brew install --cask pdfsam-basic # merge pdf files
@@ -56,8 +60,7 @@ brew install --cask visual-studio-code
 brew install --cask spotify
 brew install --cask slack
 brew install --cask temurin ## JDK https://adoptium.net/ 
-# brew install --cask font-jetbrains-mono-nerd-font
-brew install --cask karabiner-elements
+brew install --cask karabiner-elements # keyboard modify
 
 ## fisher setup
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
