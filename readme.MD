@@ -45,7 +45,7 @@ brew install --cask nikitabobko/tap/aerospace
 brew install --cask font-victor-mono-nerd-font
 # brew install --cask font-jetbrains-mono-nerd-font
 brew install --cask kitty
-
+brew install --cask fork
 
 
 ## addition application
