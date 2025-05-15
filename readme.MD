@@ -32,7 +32,7 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 brew install
 ```
-brew install wget fd fzf uv jq \
+brew install wget fd fzf uv jq tree \
               jesseduffield/lazygit/lazygit \
               git-delta \
               zoxide \
@@ -61,13 +61,29 @@ brew install --cask cyberduck
 brew install --cask visual-studio-code
 brew install --cask spotify
 brew install --cask slack
-brew install --cask temurin ## JDK https://adoptium.net/ 
 brew install --cask karabiner-elements # keyboard modify
 
 ## fisher setup
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 fisher install PatrickF1/fzf.fish
 
+```
+# java
+# brew install --cask temurin ## JDK https://adoptium.net/ 
+brew install openjdk
+For the system Java wrappers to find this JDK, symlink it with
+  sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
+openjdk is keg-only, which means it was not symlinked into /opt/homebrew,
+because macOS provides similar software and installing this software in
+parallel can cause all kinds of trouble.
+
+If you need to have openjdk first in your PATH, run:
+  echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> $HOME/.bash_profile
+
+For compilers to find openjdk you may need to set:
+  export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+```
 # ignore some local setting files
 # git update-index --skip-worktree file
 ```
