@@ -25,7 +25,9 @@ $ cd dotfile
 then use GNU stow to create symlinks
 
 ```
-$ stow -t ~/ .
+stow -t ~/ .
+defaults write $(osascript -e 'id of app "Cursor"') ApplePressAndHoldEnabled -bool false
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
 brew install
