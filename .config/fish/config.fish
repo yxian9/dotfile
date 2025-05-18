@@ -1,12 +1,14 @@
 # Setup brew
-eval (/opt/homebrew/bin/brew shellenv)
-fish_add_path -a /opt/homebrew/bin/ /opt/homebrew/opt/curl/bin
+switch (uname)
+    case Darwin
+        source (dirname (status --current-filename))/config-osx.fish
+    case Linux
+        source (dirname (status --current-filename))/config-linux.fish
+end
+
 fish_add_path -a ~/.local/bin
 fish_add_path -a ~/.config/bin ~/go/bin
-fish_add_path -a ~/.pixi/bin
-fish_add_path -a /opt/homebrew/opt/openjdk/bin
-## conda path
-# fish_add_path -a /opt/homebrew/caskroom/miniforge/base/condabin
+
 abbr bic "brew install --cask"
 abbr vm "NVIM_APPNAME=nvim_manual_config nvim"
 abbr bin "brew info"
@@ -147,17 +149,5 @@ function y
     rm -f -- "$tmp"
 end
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
-    eval /opt/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" hook $argv | source
-else
-    if test -f "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
-        . "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
-    else
-        fish_add_path -a /opt/homebrew/Caskroom/miniforge/base/bin
-    end
-end
-# <<< conda initialize <<<
 uv generate-shell-completion fish | source
 direnv hook fish | source
