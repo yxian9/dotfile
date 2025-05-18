@@ -103,3 +103,38 @@ uv python install 3.12
 uv tool install ruff pyright
 
 ```
+
+```
+AMAZON linux setup
+sudo yum groupinstall "Development Tools"
+
+https://gist.github.com/alsunseri/dbd4d9d2fee5b59a8325ecd025d3c723
+## install brew on ec2 to manage developer tools
+#! /usr/bin/bash
+
+THE_DEV_USERNAME=ec2-user
+
+mkdir -p /home/linuxbrew/
+chown $THE_DEV_USERNAME: /home/linuxbrew/
+
+sudo -u $THE_DEV_USERNAME bash <<EOF
+mkdir /home/linuxbrew/.linuxbrew/
+git clone https://github.com/Homebrew/brew /home/linuxbrew/.linuxbrew/Homebrew
+mkdir /home/linuxbrew/.linuxbrew/bin/
+ln -s /home/linuxbrew/.linuxbrew/Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/brew
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+EOF
+
+brew install fd fzf uv jq tree \
+              jesseduffield/lazygit/lazygit \
+              git-delta \
+              zoxide \
+              yazi \
+              fish \
+              bat ripgrep \
+              neovim \
+              tmux stow \
+              deno node
+
+
+```
