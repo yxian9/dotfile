@@ -89,7 +89,7 @@
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": false,
     "markdown": true,
     "scminput": false,
@@ -931,5 +931,9 @@
   "window.restoreWindows": "none",
   "terminal.integrated.gpuAcceleration": "off",
   // "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniforge/base/envs/sing",
-  "notebook.outline.showCodeCells": true
+  "notebook.outline.showCodeCells": true,
+  "python.analysis.typeCheckingMode": "standard",
+  "github.copilot.chat.agent.autoFix": false,
+  "github.copilot.chat.agent.runTasks": false,
+  "github.copilot.nextEditSuggestions.enabled": true
 }

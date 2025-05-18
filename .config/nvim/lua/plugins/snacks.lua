@@ -3,6 +3,7 @@ return {
   enabled = true,
   opts = {
     words = { enabled = false },
+    image = { enabled = true },
     picker = {
       notifications = {
         config = {

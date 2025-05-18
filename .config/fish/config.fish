@@ -1,9 +1,12 @@
 # Setup brew
 eval (/opt/homebrew/bin/brew shellenv)
 fish_add_path -a /opt/homebrew/bin/ /opt/homebrew/opt/curl/bin
-fish_add_path -a ~/.local/bin ~/.config/bin ~/go/bin
+fish_add_path -a ~/.local/bin
+fish_add_path -a ~/.config/bin ~/go/bin
+fish_add_path -a ~/.pixi/bin
+fish_add_path -a /opt/homebrew/opt/openjdk/bin
 ## conda path
-fish_add_path -a /opt/homebrew/caskroom/miniforge/base/condabin
+# fish_add_path -a /opt/homebrew/caskroom/miniforge/base/condabin
 abbr bic "brew install --cask"
 abbr vm "NVIM_APPNAME=nvim_manual_config nvim"
 abbr bin "brew info"
@@ -25,7 +28,6 @@ set fish_cursor_replace underscore
 # The following variable can be used to configure cursor shape in
 # visual mode, but due to fish_cursor_default, is redundant here
 
-
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -37,7 +39,6 @@ set -Ux OPENER nvim
 set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings
 
-
 abbr v nvim
 abbr dr "deno -A solve.ts"
 abbr dt "deno test -A slove_test.ts"
@@ -46,7 +47,6 @@ abbr rm "rm -i"
 abbr m spotify_player
 abbr s "kitten ssh"
 abbr lc "nvim leetcode.nvim"
-
 
 zoxide init --cmd cd fish | source
 
@@ -62,7 +62,6 @@ bind -M visual y fish_clipboard_copy
 bind -M default yy fish_clipboard_copy
 bind -M default p fish_clipboard_paste
 set -g fish_escape_delay_ms 30
-
 
 ## fzf cd
 function fcd
@@ -89,8 +88,6 @@ function fcd
     # Change to the selected directory and show current directory
     cd $SELECTED_curDirs && return
 end
-
-
 
 ## fish shell cursor
 # https://github.com/fish-shell/fish-shell/issues/7458
@@ -150,8 +147,6 @@ function y
     rm -f -- "$tmp"
 end
 
-
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
@@ -165,3 +160,4 @@ else
 end
 # <<< conda initialize <<<
 uv generate-shell-completion fish | source
+direnv hook fish | source
