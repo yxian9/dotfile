@@ -26,6 +26,7 @@ then use GNU stow to create symlinks
 
 ```
 stow -t ~/ .
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 defaults write $(osascript -e 'id of app "Cursor"') ApplePressAndHoldEnabled -bool false
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
@@ -125,16 +126,6 @@ ln -s /home/linuxbrew/.linuxbrew/Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bi
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 EOF
 
-brew install fd fzf uv jq tree \
-              jesseduffield/lazygit/lazygit \
-              git-delta \
-              zoxide \
-              yazi \
-              fish \
-              bat ripgrep \
-              neovim \
-              tmux stow \
-              deno node
 
 
 ```
