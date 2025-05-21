@@ -17,7 +17,7 @@ abbr bs "brew search"
 abbr zcat gzcat
 #set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
 set -x HOMEBREW_NO_AUTO_UPDATE 1
-
+set -x MANPAGER "nvim -c '+Man!' -"
 ## cursor
 # set fish_vi_force_cursor
 # set fish_cursor_default block
