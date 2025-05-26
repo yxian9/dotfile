@@ -89,7 +89,7 @@
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": false,
     "markdown": true,
     "scminput": false,
@@ -935,5 +935,9 @@
   "python.analysis.typeCheckingMode": "standard",
   "github.copilot.chat.agent.autoFix": false,
   "github.copilot.chat.agent.runTasks": false,
-  "github.copilot.nextEditSuggestions.enabled": true
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "wdl.pythonPath": "/opt/homebrew/bin/python3",
+  "[wdl]": {
+    
+  }
 }

@@ -6,6 +6,16 @@ return {
     ---@type render.md.UserConfig
     opts = {
       render_modes = { "n", "t" },
+      heading = {
+        sign = true,
+        -- icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+      },
+      checkbox = {
+        enabled = true,
+      },
+      anti_conceal = {
+        enabled = true,
+      },
     },
   },
   {

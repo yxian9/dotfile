@@ -29,3 +29,13 @@ autocmd("Filetype", {
   group = "mygroup",
   desc = "Don't continue comments with o and O",
 })
+
+-- autocmd("FileType", {
+--   group = augroup("wrap_spell", { clear = true }),
+--   pattern = { "text", "plaintex", "typst", "gitcommit", "markdown" },
+--   callback = function()
+--     vim.opt_local.wrap = true
+--     vim.opt_local.spell = false
+--     vim.opt_local.conceallevel = 0
+--   end,
+-- })

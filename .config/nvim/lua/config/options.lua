@@ -7,6 +7,8 @@ vim.highlight.priorities.semantic_tokens = 95
 vim.g.snacks_animate = false
 
 local opt = vim.opt
+opt.conceallevel = 0
+
 opt.inccommand = "split"
 -- vim.cmd([[highlight LineNr guifg=]])
 -- vim.cmd("hi LineNr guifg=")

@@ -9,3 +9,4 @@ wallpaper
 .config/fish/fish_variables
 .config/tmux/*.log
 .config/nvim/live-tests.json
+.config/nvim/spell/en.utf-8.add.spl
