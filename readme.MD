@@ -2,37 +2,42 @@
 
 This directory contains the dotfiles for my system macOS and Linux
 
-- [lazyVim](https://www.lazyvim.org/) - 💤 neovim distribution 
-- [lazygit](https://github.com/jesseduffield/lazygit) -  💤 terminal UI for git 
+- [lazyVim](https://www.lazyvim.org/) - 💤 neovim distribution
+- [lazygit](https://github.com/jesseduffield/lazygit) -  💤 terminal UI for git
 - [kitty](https://github.com/kovidgoyal/kitty) - 🐱 a terminal that support true color and image protocol
-- [fish shell](https://fishshell.com/) - 🐠 build in vim mode, not posix compatiable though..
+- [fish shell](https://fishshell.com/) - 🐠 build in vim mode, not posix compatible though..
 - [tmux](https://github.com/tmux/tmux) - terminal multiplexer
 - [fzf](https://github.com/PatrickF1/fzf.fish) - Interactive filtering
 - [yazi](https://github.com/sxyazi/yazi) - terminal file manager
 
 ## Requirements
+
 Git and GNU stow are required to use these dotfiles.
 
-
 ## Installation
+
 Check out the dotfiles repo in your $HOME directory using git
 
 ```
-$ git clone git@github.com:yxian9/dotfile.git
-$ cd dotfile
+git clone git@github.com:yxian9/dotfile.git
+cd dotfile
 ```
 
-then use GNU stow to create symlinks
+Then use GNU stow to create symlinks
 
 ```
 stow -t ~/ .
+
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 defaults write $(osascript -e 'id of app "Cursor"') ApplePressAndHoldEnabled -bool false
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
-brew install
 ```
+## brew install
+
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 brew install wget fd fzf uv jq tree \
               jesseduffield/lazygit/lazygit \
               git-delta \
@@ -68,7 +73,7 @@ brew install --cask karabiner-elements # keyboard modify
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 fisher install PatrickF1/fzf.fish
 
-```
+
 # java
 # brew install --cask temurin ## JDK https://adoptium.net/ 
 brew install openjdk
@@ -85,20 +90,28 @@ If you need to have openjdk first in your PATH, run:
 For compilers to find openjdk you may need to set:
   export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 ```
-# ignore some local setting files
-# git update-index --skip-worktree file
-```
-macOS setting:
 
-turn on
+# ignore some local setting files
+
+```
+git update-index --skip-worktree file
+```
+
+MacOS setting:
+
+Turn on
+
 - "Keyboard navigation" in keyboard shortcuts.
 - "Group windows by application"
 
-turn off
+Turn off
+
 - "Displays have separate Spaces"
 
-lsp related stuff
+Lsp related stuff
+
 ```
+
 go install golang.org/x/tools/gopls@latest
 uv python install 3.12
 uv tool install ruff pyright
@@ -106,12 +119,15 @@ uv tool install ruff pyright
 ```
 
 ```
+
 AMAZON linux setup
 sudo yum groupinstall "Development Tools"
 
-https://gist.github.com/alsunseri/dbd4d9d2fee5b59a8325ecd025d3c723
+<https://gist.github.com/alsunseri/dbd4d9d2fee5b59a8325ecd025d3c723>
+
 ## install brew on ec2 to manage developer tools
-#! /usr/bin/bash
+
+# ! /usr/bin/bash
 
 THE_DEV_USERNAME=ec2-user
 
@@ -125,7 +141,5 @@ mkdir /home/linuxbrew/.linuxbrew/bin/
 ln -s /home/linuxbrew/.linuxbrew/Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/brew
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 EOF
-
-
 
 ```
