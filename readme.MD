@@ -38,22 +38,29 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install wget fd fzf uv jq tree \
-              jesseduffield/lazygit/lazygit \
+brew install  fd fzf uv jq \
               git-delta \
               zoxide \
               yazi \
               fish \
               bat ripgrep \
-              neovim \
-              tmux stow \
+              neovim 
+# 
+brew install lazygit 
+
+# mac specific
+brew install wget tree tmux stow jesseduffield/lazygit/lazygit \
               deno node
+
+# image preview support
+brew install poppler imagemagick ghostscript
 
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask font-victor-mono-nerd-font
 # brew install --cask font-jetbrains-mono-nerd-font
 brew install --cask kitty
 brew install --cask fork
+brew install --cask r 
 
 
 ## addition application
