@@ -1,3 +1,4 @@
+local home = os.getenv("HOME")
 return {
   {
     "neovim/nvim-lspconfig",
@@ -16,8 +17,10 @@ return {
         -- python
         pyright = {
           mason = false,
+          cmd = { home .. "/.local/bin/pyright-langserver", "--stdio" },
         },
         ruff = {
+          cmd = { home .. "/.local/bin/ruff", "server" },
           mason = false,
         },
 

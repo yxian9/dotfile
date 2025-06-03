@@ -939,5 +939,8 @@
   "wdl.pythonPath": "/opt/homebrew/bin/python3",
   "[wdl]": {
     
-  }
+  },
+  "python.defaultInterpreterPath": "/Users/yxiang/Developer/gitlab/sgnipt-research/analysis/yxiang/py/.venv",
+  "biome.configurationPath": "~/.config/biome.json",
+  "editor.defaultFormatter": "biomejs.biome"
 }

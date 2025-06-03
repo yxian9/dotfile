@@ -15,7 +15,9 @@ abbr bin "brew info"
 abbr binc "brew info --cask"
 abbr bs "brew search"
 abbr zcat gzcat
-#set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
+abbr ok okta-awscli
+
+set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
 set -x HOMEBREW_NO_AUTO_UPDATE 1
 set -x MANPAGER "nvim -c '+Man!' -"
 ## cursor

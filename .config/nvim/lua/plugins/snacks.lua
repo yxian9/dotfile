@@ -3,7 +3,22 @@ return {
   enabled = true,
   opts = {
     words = { enabled = false },
-    image = { enabled = true },
+    image = {
+      enabled = true,
+      formats = {
+        "png",
+        "jpg",
+        "jpeg",
+        "gif",
+        "bmp",
+        "webp",
+        "tiff",
+        "heic",
+        "avif",
+        "webm",
+        "pdf",
+      },
+    },
     picker = {
       notifications = {
         config = {
