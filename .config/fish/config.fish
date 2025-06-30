@@ -10,7 +10,8 @@ fish_add_path -a ~/.local/bin
 fish_add_path -a ~/.config/bin ~/go/bin
 
 abbr bic "brew install --cask"
-abbr vm "NVIM_APPNAME=nvim_manual_config nvim"
+abbr vm "NVIM_APPNAME=tiny-nvim  nvim"
+abbr am "NVIM_APPNAME=abi_nvim nvim"
 abbr bin "brew info"
 abbr binc "brew info --cask"
 abbr bs "brew search"
@@ -54,9 +55,9 @@ abbr lc "nvim leetcode.nvim"
 
 zoxide init --cmd cd fish | source
 
-bind \cr _fzf_search_history
-
-bind -M insert \cr _fzf_search_history
+# bind \cr _fzf_search_history
+#
+# bind -M insert \cr _fzf_search_history
 
 # for insert mode: accept autosuggestion
 bind -M insert \cf forward-char
@@ -67,6 +68,13 @@ bind -M default yy fish_clipboard_copy
 bind -M default p fish_clipboard_paste
 set -g fish_escape_delay_ms 30
 
+## denv # disable direnv in current shell
+# https://github.com/direnv/direnv/issues/550#issuecomment-933579968
+function denv
+    functions --erase __direnv_export_eval && functions --erase __direnv_export_eval_2
+end
+#
+#
 ## fzf cd
 function fcd
     # Get a list of directories, ignore errors
