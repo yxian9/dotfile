@@ -5,7 +5,7 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {
-      render_modes = { "n", "t" },
+      render_modes = { "n", "t", "v", "V" },
       heading = {
         sign = true,
         -- icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
@@ -15,6 +15,9 @@ return {
       },
       anti_conceal = {
         enabled = true,
+      },
+      code = {
+        language_name = false,
       },
     },
   },

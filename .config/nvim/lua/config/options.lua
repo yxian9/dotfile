@@ -9,6 +9,11 @@ vim.g.snacks_animate = false
 local opt = vim.opt
 opt.conceallevel = 0
 
+opt.winbar = "  %m %f"
+opt.clipboard = "unnamedplus"
+
+vim.opt.cursorlineopt = "number" -- diable line heightlght, keep line highlight
+
 opt.inccommand = "split"
 -- vim.cmd([[highlight LineNr guifg=]])
 -- vim.cmd("hi LineNr guifg=")
@@ -18,4 +23,4 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, fl
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, float)
 
 -- expand ee to e %:h using <c-]
-vim.cmd([[cnoreabbrev <expr> ee getcmdtype() == ':' && getcmdline() == 'ee' ? 'e '.expand('%:h').'/' : 'ee']])
+-- vim.cmd([[cnoreabbrev <expr> ee getcmdtype() == ':' && getcmdline() == 'ee' ? 'e '.expand('%:h').'/' : 'ee']])
