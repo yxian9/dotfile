@@ -1,5 +1,10 @@
-[user]
-	name = yxian9
+
+[include]
+    path = ~/.gitconfig-person
+
+[includeIf "gitdir:~/Developer/gitlab/"]
+    path = ~/.gitconfig-work
+
 [core]
     pager = delta
     editor = nvim
@@ -7,16 +12,16 @@
 	  excludesFile = ~/.gitignore_global
 [delta]
     navigate = true    # use n and N to move between diff sections`
-		line-numbers = true
+	  line-numbers = true
 [diff]
    tool = vimdiff
    colorMoved = default
 [merge]
-    ; conflictstyle = diff3
+    conflictstyle = zdiff3
     tool = vimdiff
 [mergetool "vimdiff"]
     cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED  -c '$wincmd w' -c 'wincmd J'
-	keepBackup = false
+	  keepBackup = false
 [alias]
     ss = status -s
     lol = log --oneline --graph --decorate --all
@@ -33,4 +38,4 @@
 [pull]
     rebase = true
 [rerere]
-	enabled = true
+	enabled = false

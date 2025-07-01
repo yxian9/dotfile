@@ -18,24 +18,21 @@ Git and GNU stow are required to use these dotfiles.
 
 Check out the dotfiles repo in your $HOME directory using git
 
-```
+```bash
 git clone git@github.com:yxian9/dotfile.git
 cd dotfile
 ```
 
 Then use GNU stow to create symlinks
 
-```
+```bash
 stow -t ~/ .
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-defaults write $(osascript -e 'id of app "Cursor"') ApplePressAndHoldEnabled -bool false
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
-```
-## brew install
-
+```bash
+## install brew
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install  fd fzf uv jq \
@@ -46,11 +43,14 @@ brew install  fd fzf uv jq \
               bat ripgrep \
               neovim 
 # 
-brew install lazygit 
 
 # mac specific
-brew install wget tree tmux stow jesseduffield/lazygit/lazygit \
-              deno node
+brew install wget tree tmux stow \
+            jesseduffield/lazygit/lazygit \
+              deno node go
+
+defaults write $(osascript -e 'id of app "Cursor"') ApplePressAndHoldEnabled -bool false
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 # image preview support
 brew install poppler imagemagick ghostscript
@@ -82,26 +82,38 @@ fisher install PatrickF1/fzf.fish
 
 
 # java
+
 # brew install --cask temurin ## JDK https://adoptium.net/ 
+
 brew install openjdk
-For the system Java wrappers to find this JDK, symlink it with
-  sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+# For the system Java wrappers to find this JDK, symlink it with
+# sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
-openjdk is keg-only, which means it was not symlinked into /opt/homebrew,
-because macOS provides similar software and installing this software in
-parallel can cause all kinds of trouble.
-
-If you need to have openjdk first in your PATH, run:
-  echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> $HOME/.bash_profile
-
-For compilers to find openjdk you may need to set:
-  export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-```
-
-# ignore some local setting files
+# openjdk is keg-only, which means it was not symlinked into /opt/homebrew,
+# because macOS provides similar software and installing this software in
+# parallel can cause all kinds of trouble.
+#
+# If you need to have openjdk first in your PATH, run:
+#   echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> $HOME/.bash_profile
+#
+# For compilers to find openjdk you may need to set:
+#   export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 ```
+
+```bash
+## git related setting
+
+# per project lazygit setting https://github.com/jesseduffield/lazygit/pull/3787
+touch .git/lazygit.yml
+
+services:
+  'github.foo.bar': 'github:github.foo.bar'
+
 git update-index --skip-worktree file
+
+# create .gitconfig-work/person file with info
+
 ```
 
 MacOS setting:
@@ -115,18 +127,17 @@ Turn off
 
 - "Displays have separate Spaces"
 
-Lsp related stuff
+Language related tools
 
-```
-
+```bash
 go install golang.org/x/tools/gopls@latest
 uv python install 3.12
 uv tool install ruff pyright
 
 ```
 
-```
-
+```bash
+## setup ec2 env
 AMAZON linux setup
 sudo yum groupinstall "Development Tools"
 
@@ -148,5 +159,4 @@ mkdir /home/linuxbrew/.linuxbrew/bin/
 ln -s /home/linuxbrew/.linuxbrew/Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/brew
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 EOF
-
 ```
