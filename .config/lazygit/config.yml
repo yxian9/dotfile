@@ -2,48 +2,52 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
-  allBranchesLogCmd: "git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline "
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
   showDivergenceFromBaseBranch: arrowAndNumber
-
+  allBranchesLogCmds:
+    - 'git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline '
 customCommands:
-  - key: "<c-o>" # Ctrl-f (think "full screen") to show selected commit https://github.com/jesseduffield/lazygit/issues/1113
+  - key: "<c-f>" # Ctrl-f (think "full screen") to show selected commit https://github.com/jesseduffield/lazygit/issues/1113
     context: "commits"
     command: "git show {{.SelectedLocalCommit.Sha}}"
-    subprocess: true
     description: "Show selected commit"
-    stream: true
-  - key: "<c-o>" # Ctrl-f (think "full screen") to show selected commit
+    output: terminal
+  - key: "<c-f>" # Ctrl-f (think "full screen") to show selected commit
     context: "files"
     command: "git diff "
-    subprocess: true
     description: "Show selected commit"
     # stream: true
+
+    output: terminal
   - key: "M" # https://github.com/jesseduffield/lazygit/issues/2461
     command: "git mergetool {{ .SelectedFile.Name }}"
     context: "files"
     loadingText: "opening git mergetool"
-    subprocess: true
+    output: terminal
   - key: H
     command: git restore --ours {{.SelectedFile.Name | quote}}
     loadingText: "git select ours"
     context: mergeConflicts
-    subprocess: true
+    output: terminal
   - key: L
     command: git restore --theirs {{.SelectedFile.Name | quote}}
     loadingText: "git select theirs"
     context: mergeConflicts
-    subprocess: true
+    output: terminal
+  - key: "W"
+    command: git commit --no-verify
+    context: "global"
+    output: terminal
 os:
   editPreset: "nvim"
   open: "nvim {{filename}}"
-
 gui:
   statusPanelView: allBranchesLog
   showFileTree: false
   nerdFontsVersion: "3"
   mainPanelSplitMode: "vertical"
   enlargedSideViewLocation: top
+  commitHashLength: 6
   theme:
     activeBorderColor:
       - "#ff9e64"
@@ -69,3 +73,7 @@ gui:
       - "#db4b4b"
     defaultFgColor:
       - "#c0caf5"
+keybinding:
+  commits:
+    moveDownCommit: <c-x>
+    moveUpCommit: <c-y>
