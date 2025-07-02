@@ -21,7 +21,6 @@
     tool = vimdiff
 [mergetool "vimdiff"]
     cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED  -c '$wincmd w' -c 'wincmd J'
-	  keepBackup = false
 [alias]
     ss = status -s
     lol = log --oneline --graph --decorate --all
@@ -39,3 +38,7 @@
     rebase = true
 [rerere]
 	enabled = false
+[mergetool]
+	keepBackup = false
+[diff-so-fancy]
+	stripLeadingSymbols = false

@@ -1,7 +1,8 @@
 git:
   paging:
     colorArg: always
-    pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+    pager: diff-so-fancy
+    # pager: delta  --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
   showDivergenceFromBaseBranch: arrowAndNumber
   allBranchesLogCmds:
@@ -42,10 +43,11 @@ os:
   editPreset: "nvim"
   open: "nvim {{filename}}"
 gui:
+  sidePanelWidth: 0.25
   statusPanelView: allBranchesLog
   showFileTree: false
   nerdFontsVersion: "3"
-  mainPanelSplitMode: "vertical"
+  mainPanelSplitMode: "horizontal"
   enlargedSideViewLocation: top
   commitHashLength: 6
   theme:
