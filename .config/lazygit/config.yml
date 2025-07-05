@@ -39,6 +39,11 @@ customCommands:
     command: git commit --no-verify
     context: "global"
     output: terminal
+  - key: 'E'
+    description: 'Add empty commit'
+    context: 'commits'
+    command: 'git commit --allow-empty -m "empty commit"'
+    loadingText: 'Committing empty commit...'
 os:
   editPreset: "nvim"
   open: "nvim {{filename}}"
@@ -48,7 +53,7 @@ gui:
   showFileTree: false
   nerdFontsVersion: "3"
   mainPanelSplitMode: "horizontal"
-  enlargedSideViewLocation: top
+  enlargedSideViewLocation: left
   commitHashLength: 6
   theme:
     activeBorderColor:

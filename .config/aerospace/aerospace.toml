@@ -12,7 +12,14 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+
+# Start sketchybar when starting aerospace
+after-startup-command = ['exec-and-forget sketchybar']
+
+# Notify Sketchybar about workspace change
+exec-on-workspace-change = ['/bin/bash', '-c',
+  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
+]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -52,29 +59,19 @@ on-focus-changed = "move-mouse window-lazy-center"
 #                 In this example, 24 is a default value when there is no match.
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
-
 [gaps]
-inner.horizontal = 5
-inner.vertical = 5
-outer.left = 5
-outer.bottom = 4
-outer.top = 3
-outer.right = 5
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       10
+outer.bottom =     10
+outer.top =        40
+outer.right =      10
+
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 [mode.main.binding]
-cmd-h = []                     # Disable "hide application"
-cmd-alt-h = []                 # Disable "hide others"
-alt-f = 'fullscreen'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-# alternative window
-cmd-alt-shift-6 = 'workspace-back-and-forth'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-## swap between monitor
-cmd-alt-shift-0 = 'move-workspace-to-monitor --wrap-around next'
 # All possible keys:
 # - Letters.        a, b, c, ..., z
 # - Numbers.        0, 1, 2, ..., 9
@@ -86,7 +83,6 @@ cmd-alt-shift-0 = 'move-workspace-to-monitor --wrap-around next'
 #                   keypadMinus, keypadMultiply, keypadPlus
 # - Arrows.         left, down, up, right
 
-
 # All possible modifiers: cmd, alt, ctrl, shift
 
 # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -97,58 +93,79 @@ cmd-alt-shift-0 = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
-alt-comma = 'layout accordion horizontal vertical'
+alt-comma = 'layout accordion vertical horizontal'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-cmd-shift-h = 'focus left'
-cmd-shift-l = 'focus right'
-## save all cmd-shift for vscode and cursor app
-# cmd-shift-j = 'focus down'
-# cmd-shift-k = 'focus up'
+alt-h = 'focus left'
+# alt-j = 'focus down'
+# alt-k = 'focus up'
+alt-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
+# alt-shift-j = 'move down'
+# alt-shift-k = 'move up'
 alt-shift-l = 'move right'
-# cmd-alt-shift-3 = 'move down'
-# cmd-alt-shift-4 = 'move up'
 
-cmd-alt-ctrl-shift-1 = 'move-node-to-workspace 1'
-cmd-alt-ctrl-shift-2 = 'move-node-to-workspace 2'
-cmd-alt-ctrl-shift-3 = 'move-node-to-workspace 3'
-cmd-alt-ctrl-shift-4 = 'move-node-to-workspace 4'
-cmd-alt-ctrl-shift-5 = 'move-node-to-workspace 5'
-cmd-alt-ctrl-shift-6 = 'move-node-to-workspace 6'
-cmd-alt-ctrl-shift-7 = 'move-node-to-workspace 📘'
-cmd-alt-ctrl-shift-8 = 'move-node-to-workspace 🎵'
-cmd-alt-ctrl-shift-9 = 'move-node-to-workspace 9'
-cmd-alt-ctrl-shift-b = 'move-node-to-workspace 🌎' # for Browser
-cmd-alt-ctrl-shift-e = 'move-node-to-workspace 📁' # for File Explorer (Finder)
-cmd-alt-ctrl-shift-m = 'move-node-to-workspace 🤖' # for Music
-cmd-alt-ctrl-shift-t = 'move-node-to-workspace 🎮' # for Terminal
-cmd-alt-ctrl-shift-c = 'move-node-to-workspace 👾' # for Code
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 📘'
-alt-8 = 'workspace 🎵' # 8 for music
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
-alt-b = 'workspace 🌎' # for Browser
-alt-e = 'workspace 📁' # for File Explorer (Finder)
-alt-m = 'workspace 🤖' # for slace message
-alt-t = 'workspace 🎮' # for Terminal
-alt-c = 'workspace 👾' # for code
-alt-v = 'workspace v' # for code
-# See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+alt-s = 'workspace S'
+alt-b = 'workspace B'
+alt-t = 'workspace T'
+alt-v = 'workspace V'
+alt-c = 'workspace C'
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-s = 'move-node-to-workspace S'
+alt-shift-b = 'move-node-to-workspace B'
+alt-shift-t = 'move-node-to-workspace T'
+alt-shift-v = 'move-node-to-workspace V'
+alt-shift-c = 'move-node-to-workspace C'
+
+alt-f = 'fullscreen'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
+alt-tab = 'workspace-back-and-forth'
+# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
+
+alt-shift-r = 'mode resize'
+
+[workspace-to-monitor-force-assignment]
+
+7 = '^built-in retina display$' 
+8 = '^built-in retina display$' 
+9 = '^built-in retina display$'
+
+
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+b = 'balance-sizes'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#resize
+minus = 'resize smart -50'
+equal = 'resize smart +50'
+
+enter = 'mode main'
+esc = 'mode main'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -156,10 +173,7 @@ alt-shift-semicolon = 'mode service'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = [
-  'layout floating tiling',
-  'mode main',
-] # Toggle between floating and tiling layout
+f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-shift-h = ['join-with left', 'mode main']
@@ -167,13 +181,47 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
-
-[workspace-to-monitor-force-assignment]
-
-'📘' = '^built-in retina display$' # 7
-'🎵' = '^built-in retina display$' # 8
-9 = '^built-in retina display$'
+# Move apps to relevant windows
 
 [[on-window-detected]]
-if.app-id = 'com.cisco.anyconnect.gui'
-run = 'layout floating'
+if.app-id = 'net.kovidgoyal.kitty'
+run = "move-node-to-workspace T"
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = "move-node-to-workspace B"
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = "move-node-to-workspace B"
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = "move-node-to-workspace V"
+
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = "move-node-to-workspace S"
+
+[[on-window-detected]]
+if.app-id = 'NULL-APP-BUNDLE-ID'
+run = "move-node-to-workspace T"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.QuickTimePlayerX'
+run = 'move-node-to-workspace 6'
+
+# Floating apps
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = "layout floating"
+
+# cursor
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'  
+run = "move-node-to-workspace C"

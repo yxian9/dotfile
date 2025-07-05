@@ -42,3 +42,5 @@
 	keepBackup = false
 [diff-so-fancy]
 	stripLeadingSymbols = false
+	markEmptyLines = false
+	changeHunkIndicators = true
