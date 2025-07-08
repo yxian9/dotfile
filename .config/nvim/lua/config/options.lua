@@ -14,6 +14,9 @@ opt.clipboard = "unnamedplus"
 
 vim.opt.cursorlineopt = "number" -- diable line heightlght, keep line highlight
 
+vim.api.nvim_set_hl(0, "GitConflictAncestor", { fg = "#ffffff", bg = "#1d3b40" })
+vim.api.nvim_set_hl(0, "GitConflictAncestorLabel", { fg = "#ffffff", bg = "#1d3b40" })
+
 opt.inccommand = "split"
 -- vim.cmd([[highlight LineNr guifg=]])
 -- vim.cmd("hi LineNr guifg=")

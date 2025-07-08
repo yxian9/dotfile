@@ -18,7 +18,7 @@ return {
     opts.sections.lualine_a = { { "fancy_mode", width = 1 } }
     -- opts.sections.lualine_a = {  "mode"}
     opts.sections.lualine_b = {
-      { "fancy_branch" },
+      { "fancy_branch", icon = { "", color = { fg = "#E46876" } } },
       {
         "diagnostics",
         symbols = {
@@ -102,7 +102,8 @@ return {
     }
     opts.sections.lualine_y = {
       -- { "fancy_filetype" },
-      { "location", padding = { left = 0, right = 1 } },
+      { "location", padding = { left = 1, right = 1 } },
+      { "progress", padding = { left = 1, right = 1 } },
     }
     opts.sections.lualine_z = { { "fancy_lsp_servers" } }
   end,

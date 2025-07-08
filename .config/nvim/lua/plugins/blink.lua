@@ -25,20 +25,24 @@ return {
     --   },
     -- },
     completion = {
-      menu = {
-        border = "rounded",
-        -- try add lable for completion
-        -- draw = {
-        --   columns = {
-        --     { "label", "label_description", gap = 1 },
-        --     { "kind_icon", "kind", "source_name" }, -- add source name
-        --     -- { "kind_icon", "kind" },
-        --   },
-        -- },
-      },
+      menu = { border = "rounded" },
       documentation = { window = { border = "rounded" } },
+      -- menu = {
+      --   border = "rounded",
+      --   -- try add lable for completion
+      --   -- draw = {
+      --   --   columns = {
+      --   --     { "label", "label_description", gap = 1 },
+      --   --     { "kind_icon", "kind", "source_name" }, -- add source name
+      --   --     -- { "kind_icon", "kind" },
+      --   --   },
+      --   -- },
+      -- },
     },
     signature = { window = { border = "single" } },
+    cmdline = {
+      enabled = false,
+    },
     keymap = {
       preset = "none",
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },

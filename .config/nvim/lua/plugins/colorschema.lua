@@ -1,4 +1,5 @@
 return {
+  { "brenoprata10/nvim-highlight-colors", opts = {} },
   {
     "LazyVim/LazyVim",
     keys = {
@@ -8,7 +9,37 @@ return {
     opts = {
       -- colorscheme = "gruvbox-material",
       colorscheme = "tokyonight",
+      -- colorscheme = "Dayfox",
+      -- colorscheme = "dawnfox",
       -- colorscheme = "catppuccin",
+    },
+  },
+  {
+    "EdenEast/nightfox.nvim",
+    opts = {
+      options = {
+        styles = {
+          comments = "italic",
+          -- keywords = "bold",
+          types = "italic,bold",
+        },
+      },
+    },
+  },
+  {
+    "thesimonho/kanagawa-paper.nvim",
+    lazy = false,
+    enabled = false,
+    priority = 1000,
+    opts = {
+      styles = {
+        -- style for comments
+        comment = { italic = false },
+      },
+      color_offset = {
+        ink = { brightness = 0, saturation = 0 },
+        canvas = { brightness = 0, saturation = 0 },
+      },
     },
   },
   {

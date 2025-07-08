@@ -50,7 +50,7 @@ return {
     },
     cmdline = {
       enabled = true,
-      view = "cmdline",
+      -- view = "cmdline",
       format = {
         search_down = { conceal = false, kind = "search", pattern = "^/", icon = "", lang = "regex" },
         search_up = { conceal = false, kind = "search", pattern = "^%?", icon = "", lang = "regex" },
